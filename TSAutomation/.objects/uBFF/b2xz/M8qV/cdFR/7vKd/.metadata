@@ -1,0 +1,13 @@
+﻿{
+  "Id": "7vKdl3aR40G38H7m1VFJCQ",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/7vKdl3aR40G38H7m1VFJCQ",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/cdFR8E5eFkeAp8EOmrcCag",
+  "Name": "Save & Run",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Created": "2021-07-30T12:00:12.7233022Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.7233022Z"
+}

@@ -1,0 +1,12 @@
+﻿{
+  "Id": "7r04ceeZH0mlD3m_OLwWKw",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/7r04ceeZH0mlD3m_OLwWKw",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/b2xzjBTkPUGVlz1G8T9aAA",
+  "Name": "Chrome: Reports | Salesforce",
+  "Type": "Screen",
+  "Created": "2021-07-30T12:00:12.7694868Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.7694868Z"
+}

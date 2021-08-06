@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="EwnUiVrMiUmRfqknZIiX1g" Selector="&lt;html app='chrome.exe' title='Home | Salesforce' /&gt;" Url="https://uipath.lightning.force.com/lightning/page/home" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0QUR3QB3ObEmXVfYW5Og7Kw</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="30ca657ef2e05679005c62d5d5311675.png" xmlns="">0tl_mQehY00eYGWomtcFIpw</imageRef>
+</TargetApp>

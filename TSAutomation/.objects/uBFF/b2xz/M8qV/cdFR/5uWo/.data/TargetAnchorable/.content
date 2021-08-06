@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="iXbZdpqAOUqFo7WiCNRD_w" DesignTimeRectangle="672, 800, 71, 35" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aaname='Apply' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Apply' parentid='J4T73sQ_92p-dialog-body' tag='BUTTON' type='button' check:text='Apply' /&gt;" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0xy4NiDI27UGF2aVlednWEQ</imageRef>
+</TargetAnchorable>

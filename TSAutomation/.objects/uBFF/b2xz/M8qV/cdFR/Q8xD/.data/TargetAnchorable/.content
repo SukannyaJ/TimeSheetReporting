@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="fhaBGiYHUE2U75YU9qjppA" DesignTimeRectangle="70, 701, 239, 58" ElementType="Button" FriendlyName="'Edit FilterStart'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='Edit FilterStart Dateequals*' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl id='J4T73sQ_92p' tag='BUTTON' type='button' aaname='Edit FilterStart Dateequals &amp;quot;&amp;quot;' check:text='Edit FilterStart Dateequals &amp;quot;&amp;quot;' /&gt;" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="80, 730, 64, 22" ElementType="Text" FriendlyName="'equals &quot;&quot;'" FullSelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='equals &amp;quot;&amp;quot;' parentid='J4T73sQ_92p' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='equals &amp;quot;&amp;quot;' parentid='J4T73sQ_92p' tag='SPAN' type='' check:text='equals &amp;quot;&amp;quot;' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1iyor7dSX8kuAGWCakYo-mA</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0D-O1WYlBj0q_yU0Be-jS6Q</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="96fb6eb0454862769735fb9ce5afbe66.png" xmlns="">0-HPEO3CH_0iJ93M2UnMXyA</imageRef>
+</TargetAnchorable>

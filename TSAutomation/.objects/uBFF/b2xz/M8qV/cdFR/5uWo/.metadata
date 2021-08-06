@@ -1,0 +1,13 @@
+﻿{
+  "Id": "5uWoWB9UkkuY1Agr43faMQ",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/5uWoWB9UkkuY1Agr43faMQ",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/cdFR8E5eFkeAp8EOmrcCag",
+  "Name": "Apply",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Created": "2021-07-30T12:00:12.5419446Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.5419446Z"
+}

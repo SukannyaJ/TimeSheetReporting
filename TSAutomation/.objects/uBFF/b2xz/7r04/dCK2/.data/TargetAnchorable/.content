@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/o/Report/home?queryScope=mru" ContentHash="wYE3eR6dRUK6AdTU9xGhxw" DesignTimeRectangle="217, 374, 135, 22" ElementType="Text" FriendlyName="'Resource Timecard'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' colName='*Report NameSorted*' tag='A' innertext='{0}' /&gt;&quot;, strReportName)]" FuzzySelectorArgument="&lt;webctrl aaname='Resource Timecard' colName='*Report NameSorted*' tag='A' innertext='Resource Timecard' type='' check:text='Resource Timecard' /&gt;" Reference="4I5ZSPUYzEGseBRjI0-ynQ/dCK2LR4rkE-wUNRW2iVzzA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports | Salesforce' /&gt;" SearchSteps="Selector" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="217, 334, 102, 22" ElementType="Text" FriendlyName="'Report Name'" FullSelectorArgument="&lt;webctrl aaname='Report Name' parentid='brandBand_2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Report Name' parentid='brandBand_2' tag='SPAN' type='' check:text='Report Name' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1C5adw1BjJkm7D4AIvnVkiw</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0naFmUhZ5LUKoaa5jK2bIRQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="69fd0241e7ead80215754fec8e3062f4.png" xmlns="">0QYPJf6rFOEuMfAkjeoHaGw</imageRef>
+</TargetAnchorable>

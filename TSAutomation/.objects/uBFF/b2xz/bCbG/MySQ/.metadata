@@ -1,0 +1,16 @@
+﻿{
+  "Id": "MySQqin0akyTR74C8AFpiw",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/MySQqin0akyTR74C8AFpiw",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/bCbGNIdSPkeWMpF8wan5oA",
+  "Name": "ViewProfile",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2021-08-05T13:05:03.2365499Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-08-05T13:05:48.0036969Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

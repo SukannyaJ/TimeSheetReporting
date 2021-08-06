@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="ezJdLjx-FUSdP-j6ORRieg" Reference="4I5ZSPUYzEGseBRjI0-ynQ/7r04ceeZH0mlD3m_OLwWKw" Selector="&lt;html app='chrome.exe' title='Reports | Salesforce' /&gt;" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0FlYUsY9hRkGX51oOa2EZMw</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="244cb10194d70e84e18151278a1cd5ed.png" xmlns="">0cFA5smruwE-tDEmyD2HqFg</imageRef>
+</TargetApp>

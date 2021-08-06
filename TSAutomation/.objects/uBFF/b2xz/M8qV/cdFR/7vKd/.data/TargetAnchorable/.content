@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="be8cX8dtp06k-TXMzWWv6A" DesignTimeRectangle="1486, 230, 119, 40" ElementType="Button" FriendlyName="'Save &amp; Run'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='Save &amp;amp; Run' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627645362050-176759' tag='IFRAME' /&gt;&lt;webctrl parentid='uWLxB_0_2z' tag='BUTTON' type='button' aaname='Save &amp;amp; Run' check:text='Save &amp;amp; Run' /&gt;" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="1615, 230, 73, 40" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;webctrl name='builder-1627645362050-176759' tag='IFRAME' /&gt;&lt;webctrl parentid='2PfpHSWwJr' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627645362050-176759' tag='IFRAME' /&gt;&lt;webctrl parentid='2PfpHSWwJr' tag='BUTTON' type='button' aaname='Save' check:text='Save' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1bKJAiV3A80a-gRH5WPpcGA</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0gePIKWgHc0WfsUuZPdn2gg</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="8a853eb803ed19ff1203c6c39d5b7d9b.png" xmlns="">0h5JOhLr65Eq8meH5rUsFFA</imageRef>
+</TargetAnchorable>

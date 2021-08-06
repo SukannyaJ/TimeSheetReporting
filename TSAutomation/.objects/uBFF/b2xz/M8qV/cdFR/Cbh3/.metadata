@@ -1,0 +1,13 @@
+﻿{
+  "Id": "Cbh368o3WEKxZW-0AZ861w",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/Cbh368o3WEKxZW-0AZ861w",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/cdFR8E5eFkeAp8EOmrcCag",
+  "Name": "Date",
+  "Type": "Element",
+  "TaxonomyType": "Text",
+  "Created": "2021-07-30T12:00:12.5883235Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.5883235Z"
+}

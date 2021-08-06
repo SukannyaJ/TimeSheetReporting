@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="Hy8dDdBfikyV8pLPM8U2qg" Reference="4I5ZSPUYzEGseBRjI0-ynQ/bCbGNIdSPkeWMpF8wan5oA" Selector="&lt;html app='chrome.exe' title='*Salesforce' /&gt;" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0MbYAFaP_UkK9SPWUwRCytQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="6be3f381a277a05242189329092f7e2f.png" xmlns="">0Xq2czBkSbEyVhu5cLNv1yA</imageRef>
+</TargetApp>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="s8uh2uqnT0aqo00xp4JYuw" Reference="4I5ZSPUYzEGseBRjI0-ynQ/ZF_LsAlciE24oisu8Sb_KA" Selector="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0zsy31-6vDEqic0PDIvbACQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="9420eb89a20418b09a375d899a811c27.png" xmlns="">0HBCwH_ITYUyLK-ujFRnpSA</imageRef>
+</TargetApp>

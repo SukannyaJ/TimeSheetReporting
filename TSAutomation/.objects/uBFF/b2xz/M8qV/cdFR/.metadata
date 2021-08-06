@@ -1,0 +1,13 @@
+﻿{
+  "Id": "cdFR8E5eFkeAp8EOmrcCag",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/cdFR8E5eFkeAp8EOmrcCag",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/M8qVc0qOckinxlv_cgCngg",
+  "Name": "Filters",
+  "Type": "Element",
+  "TaxonomyType": "Tab",
+  "Created": "2021-07-30T12:00:12.5018782Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.5018782Z"
+}

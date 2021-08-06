@@ -1,0 +1,13 @@
+﻿{
+  "Id": "dCK2LR4rkE-wUNRW2iVzzA",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/dCK2LR4rkE-wUNRW2iVzzA",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/7r04ceeZH0mlD3m_OLwWKw",
+  "Name": "Resource Timecard",
+  "Type": "Element",
+  "TaxonomyType": "Link",
+  "Created": "2021-07-30T12:00:12.8064737Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.8064737Z"
+}

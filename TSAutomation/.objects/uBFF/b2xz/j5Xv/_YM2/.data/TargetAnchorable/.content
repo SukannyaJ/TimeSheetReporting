@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/page/home" ContentHash="H4CJIxe7VkmJGQNDrXnrfw" DesignTimeRectangle="1359, 171, 55, 24" ElementType="Text" FriendlyName="'Reports'" FullSelectorArgument="&lt;webctrl aaname='Reports' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Reports' tag='SPAN' type='' check:text='Reports' /&gt;" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home | Salesforce' /&gt;" SearchSteps="Selector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0-TqiCFADM02XywLuBNs0oA</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="cab05d38616ea4cd9e4ff458d13cedba.png" xmlns="">0cvrKuuQPMEKJNdXHHS9yaQ</imageRef>
+</TargetAnchorable>

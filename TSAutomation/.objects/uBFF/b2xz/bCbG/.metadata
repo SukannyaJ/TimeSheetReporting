@@ -1,0 +1,16 @@
+﻿{
+  "Id": "bCbGNIdSPkeWMpF8wan5oA",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/bCbGNIdSPkeWMpF8wan5oA",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/b2xzjBTkPUGVlz1G8T9aAA",
+  "Name": "Chrome: SalesForce",
+  "Description": "Salesforce Logout/Closing Screen ",
+  "Type": "Screen",
+  "Created": "2021-08-05T12:13:31.78342Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-08-05T12:13:46.9290362Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

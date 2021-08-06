@@ -1,0 +1,12 @@
+﻿{
+  "Id": "j5XvmAD7LkqKPz_OP2qm3Q",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/j5XvmAD7LkqKPz_OP2qm3Q",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/b2xzjBTkPUGVlz1G8T9aAA",
+  "Name": "Chrome: Home | Salesforce",
+  "Type": "Screen",
+  "Created": "2021-07-30T12:00:12.393773Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.393773Z"
+}

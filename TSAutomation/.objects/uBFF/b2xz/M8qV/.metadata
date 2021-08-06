@@ -1,0 +1,12 @@
+﻿{
+  "Id": "M8qVc0qOckinxlv_cgCngg",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/M8qVc0qOckinxlv_cgCngg",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/b2xzjBTkPUGVlz1G8T9aAA",
+  "Name": "Chrome: Report Builder | Salesforce",
+  "Type": "Screen",
+  "Created": "2021-07-30T12:00:12.464115Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-07-30T12:00:12.464115Z"
+}

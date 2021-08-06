@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="v5CHdi5hWkGWZz497ETQ-Q" DesignTimeRectangle="508, 730, 230, 40" ElementType="InputBox" FriendlyName="'7/24/2021'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='INPUT' type='text' aaname='Date' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl id='NPZO8VUZbb' tag='INPUT' type='text' aaname='Date' /&gt;" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="508, 701, 41, 27" ElementType="Text" FriendlyName="'Date'" FullSelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Date' parentid='J4T73sQ_92p-dialog-body' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Date' parentid='J4T73sQ_92p-dialog-body' tag='LABEL' type='' check:text='Date' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1x4C0Sb-6xkuK5V1O7IlDjw</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0uL3PoLWUf06e_5N7ZUmtTw</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="75906a820d7985eac1f8cd64b489fc4e.png" xmlns="">040uhnyJsmUSCq1WS_6XVQA</imageRef>
+</TargetAnchorable>
