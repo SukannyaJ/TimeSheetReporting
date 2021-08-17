@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>767.2,636</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>781.6,2015.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadTimecardData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -72,38 +72,39 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Send Emails and Saves reports to Sharepath location &#xA;Arguments : &#xA;in_config - Config dictionary" DisplayName="SendReports" sap:VirtualizedContainerService.HintSize="375.2,471.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Send Emails and Saves reports to Sharepath location &#xA;Arguments : &#xA;in_config - Config dictionary" DisplayName="SendReports" sap:VirtualizedContainerService.HintSize="595.2,1850.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message execution started" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SendReports execution started&quot;]" />
-    <TryCatch DisplayName="Try Catch Send Reports" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message execution started" sap:VirtualizedContainerService.HintSize="553.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SendReports execution started&quot;]" />
+    <TryCatch DisplayName="Try Catch Send Reports" sap:VirtualizedContainerService.HintSize="553.6,1432" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Try Sequence" sap:VirtualizedContainerService.HintSize="486.4,693.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Try Sequence" sap:VirtualizedContainerService.HintSize="516.8,1200.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Send FTE Summary Report Email &amp; Partner Summary Report Email" DisplayName="For Each - Summary Report" sap:VirtualizedContainerService.HintSize="444.8,600.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[{in_Config(&quot;PSFTETimeSheetReportFilePath&quot;).ToString,in_Config(&quot;PSPartnerTimeSheetReportFilePath&quot;).ToString}]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Send FTE Summary Report Email &amp; Partner Summary Report Email" DisplayName="For Each - Summary Report" sap:VirtualizedContainerService.HintSize="475.2,536.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[{in_Config(&quot;PSFTETimeSheetReportFilePath&quot;).ToString,in_Config(&quot;PSPartnerTimeSheetReportFilePath&quot;).ToString}]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="409.6,435.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,358.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="strDynamicTable" />
                     <Variable x:TypeArguments="x:String" Name="strCompletedPercentage" />
@@ -113,7 +114,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Generates dynamic html table string which contains details of defectors from Summary report" DisplayName="Invoke TableGeneration workflow" sap:VirtualizedContainerService.HintSize="368,157.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="BusinessLayer\SendReports\TableGeneration.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Generates dynamic html table string which contains details of defectors from Summary report" DisplayName="Invoke TableGeneration workflow" sap:VirtualizedContainerService.HintSize="200,128.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="BusinessLayer\SendReports\TableGeneration.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_strDynamicTable">[strDynamicTable]</OutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_excelReportFilePath">[item.ToString]</InArgument>
@@ -123,10 +124,12 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sends Email based on the Email type " DisplayName="Invoke SendEmail workflow" sap:VirtualizedContainerService.HintSize="368,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="BusinessLayer\SendReports\SendEmail.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sends Email based on the Email type " DisplayName="Invoke SendEmail workflow" sap:VirtualizedContainerService.HintSize="200,96.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="BusinessLayer\SendReports\SendEmail.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_emailType">[IF(item.Contains("FTE"),"FTEWeeklyReport","PartnerWeeklyReport")]</InArgument>
                       <InArgument x:TypeArguments="s:String[]" x:Key="in_emailBodyReplacements">[{strCompletedPercentage,strDynamicTable}]</InArgument>
@@ -137,6 +140,8 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
@@ -151,10 +156,60 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
+          <Sequence DisplayName="Save Reports" sap:VirtualizedContainerService.HintSize="475.2,531.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[Not(Directory.Exists(in_Config(&quot;TSReportFilePath&quot;).ToString + in_Config(&quot;DateRange&quot;).ToString.Replace(&quot;'&quot;,&quot;'&quot;)))]" DisplayName="Check If folder is already present" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Runtime folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_Config(&quot;TSReportFilePath&quot;).ToString + in_Config(&quot;DateRange&quot;).ToString.Replace(&quot;'&quot;,&quot;'&quot;)]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CreateDirectory>
+              </If.Then>
+            </If>
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_Config(&quot;TSReportFilePath&quot;).ToString + in_Config(&quot;DateRange&quot;).ToString.Replace(&quot;'&quot;,&quot;'&quot;) + &quot;\&quot; + Path.GetFileName(in_Config(&quot;PSCoreUtilizationReportFilePath&quot;).ToString)]" DisplayName="Copy File PSCoreUtilizationReportFilePath" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;PSCoreUtilizationReportFilePath&quot;).ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CopyFile>
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_Config(&quot;TSReportFilePath&quot;).ToString + in_Config(&quot;DateRange&quot;).ToString.Replace(&quot;'&quot;,&quot;'&quot;) + &quot;\&quot; + Path.GetFileName(in_Config(&quot;PSNonCoreUtilizationReportFilePath&quot;).ToString)]" DisplayName="Copy File PSNonCoreUtilizationReportFilePath" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[in_Config(&quot;PSNonCoreUtilizationReportFilePath&quot;).ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CopyFile>
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_Config(&quot;PSWeeklyTrendTemplateFilePath&quot;).ToString]" DisplayName="Copy Latest weekly trend report" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[in_Config(&quot;PSNonCoreUtilizationReportFilePath&quot;).ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CopyFile>
+          </Sequence>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="489.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="520,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -179,6 +234,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message execution ended" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SendReports execution ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message execution ended" sap:VirtualizedContainerService.HintSize="553.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SendReports execution ended&quot;]" />
   </Sequence>
 </Activity>
