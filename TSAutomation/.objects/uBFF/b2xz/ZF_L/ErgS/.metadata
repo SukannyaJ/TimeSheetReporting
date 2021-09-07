@@ -1,0 +1,13 @@
+﻿{
+  "Id": "ErgSuhcSK0aMjQxM71trWQ",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/ErgSuhcSK0aMjQxM71trWQ",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/ZF_LsAlciE24oisu8Sb_KA",
+  "Name": "Total Records",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2021-08-25T11:07:38.8973096Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-08-25T11:07:38.8973096Z"
+}

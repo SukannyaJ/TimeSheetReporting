@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable ContentHash="HIrcFGa64U6Op4h4ltKxng" DesignTimeRectangle="375, 10, 30, 28" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Close' role='push button' automationid='' check:fulltext='Close' /&gt;" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Restore pages?' /&gt;" SearchSteps="Selector, FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="28, 63, 362, 25" ElementType="Text" FriendlyName="'Chrome didn't'" FullSelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Chrome didn&amp;apos;t shut down correctly.' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Chrome didn&amp;apos;t shut down correctly.' role='text' automationid='' check:fulltext='Chrome didn&amp;apos;t shut down correctly.' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1kzUpszQmIUaW2vMpaF1tcQ</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0EwkE6OPxWE-kgsbI_D48TQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="092ab521238acdbb8656152f35652542.png" xmlns="">0yFIUDrqmsEufJnmdTzZUPA</imageRef>
+</TargetAnchorable>

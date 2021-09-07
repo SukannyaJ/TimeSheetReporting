@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="vu-00BuDU0Oikq5dxmt2wQ" DesignTimeRectangle="54, 307, 88, 42" ElementType="Text" FriendlyName="'Total Records'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='Total Records' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='Total Records' tag='DIV' type='' check:text='Total Records' /&gt;" Reference="4I5ZSPUYzEGseBRjI0-ynQ/ErgSuhcSK0aMjQxM71trWQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0dvD8OX02xEWzM8le2m4wsQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="f3d6c2802f3aee44129644ba1f045e3a.png" xmlns="">0gp8otf528EWlq_h5LshpaA</imageRef>
+</TargetAnchorable>

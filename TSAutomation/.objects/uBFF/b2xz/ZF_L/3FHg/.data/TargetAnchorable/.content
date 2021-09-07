@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="IbEvg_uwZUSuxDG4ge_SCw" DesignTimeRectangle="677, 698, 585, 45" ElementType="Text" FriendlyName="'No Results'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aaname='No Results' tag='DIV' innertext='No Results' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aaname='No Results' tag='DIV' innertext='No Results' type='' check:text='No Results' /&gt;" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
-  <imageRef attrName="ImageBase64" xmlns="">0T1d9nlnICEmuUGFeTyyyOw</imageRef>
-  <imageRef attrName="InformativeScreenshot" originalValue="6ce535cfeac9b6b1d74e6a3ddc995393.png" xmlns="">0LGGMTwbAdkWyclLjqiqxlg</imageRef>
-</TargetAnchorable>

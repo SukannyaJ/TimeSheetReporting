@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>767.2,628</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>713.6,1145.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitAllApplications_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -77,17 +77,16 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="##Business Process Layer##&#xA;Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="InitAllApplications" sap:VirtualizedContainerService.HintSize="375.2,463.2" sap2010:WorkflowViewState.IdRef="Sequence_34">
+  <Sequence sap2010:Annotation.AnnotationText="##Business Process Layer##&#xA;Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="InitAllApplications" sap:VirtualizedContainerService.HintSize="475.2,980.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message (Initiliaze)" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Initializing Sales force application&quot;]">
+    <ui:LogMessage DisplayName="Log Message (Initiliaze)" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Initializing Sales force application&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -95,19 +94,30 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser 'Chrome: Home | Salesforce'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser 'Chrome: Home | Salesforce'" sap:VirtualizedContainerService.HintSize="433.6,570.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="241.6,147.2" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <Sequence DisplayName="Check if App launched" sap:VirtualizedContainerService.HintSize="375.2,353.6" sap2010:WorkflowViewState.IdRef="Sequence_35">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Reports'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+            <uix:NClick ClickType="Single" ContinueOnError="True" DisplayName="Click 'Close' button" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="HIrcFGa64U6Op4h4ltKxng" DesignTimeRectangle="375, 10, 30, 28" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Close' role='push button' automationid='' check:fulltext='Close' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAgCAYAAAB3j6rJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEpSURBVFhH7ZRBCsIwEEW9qQs3FbrQ6ygFBUG8Vd3WOzTyhYHp8Jtkkipd+OAh2mTyqLSbsBL+IZaikHEco5bgCmGHxvSQFcIO8ZhDMoQNLjFFNIQNrDHGbAgbtIRz0BA2YEkZ6w1hG8W+f4Zzd/18suswZw20uEJu90fY7pqwb4/0IPyGa1iDtfa61uIKGYZXaNoDjdERWIO1eq/VMglhG6w40MbYCB0YU+MOgTamJAJqikKgjimJgJqqELkTcmd+HqIjcCf03+SJ0UxCANugtRH4Dr0xFlcIHkkbIddsTNXjC9gmUV5oNkLUMdUvNMA2Qhx06i40QsxZw3CFLCWDhgA2YAnnWH8IYINqjBENAWxgiSmSIQIbnmMu2SECO4zpxR3yLVYSEsIbJfx5b5ba4lcAAAAASUVORK5CYII=" InformativeScreenshot="092ab521238acdbb8656152f35652542.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/E7BKLOlHBky8Cbo7-kyeew" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Restore pages?' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="28, 63, 362, 25" ElementType="Text" FriendlyName="'Chrome didn't'" FullSelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Chrome didn&amp;apos;t shut down correctly.' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Restore pages?' role='dialog' /&gt;&lt;ctrl name='Chrome didn&amp;apos;t shut down correctly.' role='text' automationid='' check:fulltext='Chrome didn&amp;apos;t shut down correctly.' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAW4AAAAdCAYAAACKY4ZUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUjSURBVHhe7ZkLbtwwDER7lBTouVLkKEmPsznL5h65hCvqY1ND0nI3W7TyzgOMdmV9yBE5mzbfFkIIIVNB4yaEkMmgcRNCyGTQuAkhZDJo3IQQMhk0bkIImQwaNyGETAaNmxBCJoPGTQghk0HjJoSQybjRuD+Xy88fy/Pls34+IZ/vy/P3l2VLseT89PZRPwdcfy1P338t1/rxX3F9OxDrX+cB6uSfQ40fkdi4s3Gl5tfPz/dUJvkljTviFuPOZ93X7GncjwI1fkRc485Nb4xECqSNPaJxH+Quxv2xvKYvytcvOPn9jPsrd01TuS9eXVDjR8QY9+flRf1kHUHjDqFxK2gq94XGTQpg3EcNYyuW8tN5fcDwm3m0Obq48hdEWycPmkwzwPxnnVP379Z6XzLZCOt7eQ4YWB9PMuwrGrffIF3+a7zKhNtniCnUWOc7mot5Ki2a9n1e+suh5oza6C8s3D89uwYB858vH76pYI76DvX5jTy/H+ti/1ONFb0+6en0KP2wvYe41pooecqcfGbLIdeQjCvdUVOnNt2YwrpQdelpJzR96kcyP71xH77gUixb8QilyHWTNlPDBirj+py6n27gVqhrYasmgrHOGEzx1r2dBmmURtHxtLPsPiY/YzqyTu3V8lDz7HlIOX/feHBOiu8NjDu93+K1OnTm1wj06zT2qLnrmG0M9Uwwl74eAp2dXNbPN2mM5wpJ06ZHzafLu57TaS6aolm2OtC1IQTa6jvYjcmtC62F1U7Ie+I9k6mxxo3F5mILTsjNotbnghkWbwXHc5P0jec1o3cmFq6310ZgkkGTrXtHeeBZ+TPOC85cGb1PROdXXO0htqwdNvQo7wDfHHBtlFc/3scl716SedmxddtbND6in8kHx/0+KHvbs4e1OYjJzwk0lv26ewetyCn40k/cWISucWNRm8JqlD3XonRiwf2Ffqw2Uipu+wR55WZx3o0MLMoD43Y1HZjK8H0h6yu5DQ2mArHcz7jh7lZgbaR1ojM1HaesEZ31WtT+Fo1xj44on0S3LtDGaCiUubYu5QnyMhwwbjTq4Z5kRnrjdgvOwy/Y/8W4w2b1iMzEaAE5R3lg3E4e9zLuQokrG4DSemrjVvlLjGV8O6Ofm7hF4+j+MlE+iW5doI3bRzt7NnZjErycbAxaH/n77plkSuCXk6UITDMb/II9ZNxuUSdw3GnGsXEHZ+6Rz3WKO58/MG4njxyPjtvJ477GXYFzXB1gjqfnMG+XqG5KHtvaKC87XsxHfum3xSLx4ljmFo2jOqxEddSPB9oEew9rcxCTn5MTg+yT71Xmoy7kDIBxC6U47De/FEgrAr9gj5poHu8Kyml8pxk9ozFjeR0Udyrk17gbnHiqBrsGVmPWZ+fGg71uMRVzlgPmBOe42mMsNd4tDi/vYC/E0b3o2ueR78vbH+ut7ufdrdET88qMNG7x6XVpTcuzatPdQT5nryYqea1jwI5GeI+7MbnnRWPp/Es6D+6t6I9akdlwjLvQmk4/W3H4BXvUuAXc3xS/04yHjFtYG7w940Lt40nzTfPFTbOukzgwbiePI6aic3DnVWNZz4YzXO0jTfUenumos8w9aUD31+tOnah5fo0Ujfq1ZexIXoc0TmAdoqnuaZwmuPmFxi2ARnbPQUymLvY0tjGUcXsmmYvQuAkh8+L+QENOA42bkNMR/EuAnAYaNyFnw/2vI3ImaNyEnIb6O4Do/9fJaaBxE0LIZNC4CSFkMmjchBAyFcvyG4hwMeiO1g9qAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Reports'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="249.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
                   <sap:WorkflowViewStateService.ViewState>
@@ -144,15 +154,21 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="EwnUiVrMiUmRfqknZIiX1g" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="30ca657ef2e05679005c62d5d5311675.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/j5XvmAD7LkqKPz_OP2qm3Q" Selector="&lt;html app='chrome.exe' title='Home | Salesforce' /&gt;" Url="[in_Config(&quot;SalesForceApplicationURL&quot;).ToString]" />
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="EwnUiVrMiUmRfqknZIiX1g" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="30ca657ef2e05679005c62d5d5311675.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/j5XvmAD7LkqKPz_OP2qm3Q" Url="[in_Config(&quot;SalesForceApplicationURL&quot;).ToString]">
+          <uix:TargetApp.Selector>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">&lt;html app='chrome.exe' title='Home | Salesforce' /&gt;</Literal>
+            </InArgument>
+          </uix:TargetApp.Selector>
+        </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message (End)" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Salesforce application opened&quot;]" />
+    <ui:LogMessage DisplayName="Log Message (End)" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Salesforce application opened&quot;]" />
   </Sequence>
 </Activity>

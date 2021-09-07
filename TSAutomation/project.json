@@ -3,7 +3,6 @@
   "description": "Generates weekly timesheet utilization and timesheet summary reports",
   "main": "Main.xaml",
   "dependencies": {
-    "BalaReva.Excel.Activities": "[2021.0.0]",
     "UiPath.Excel.Activities": "[2.10.4]",
     "UiPath.Mail.Activities": "[1.10.5]",
     "UiPath.System.Activities": "[21.4.1]",
@@ -13,7 +12,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.4.4.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.10",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -25,7 +24,7 @@
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false
+    "startsInPiP": true
   },
   "designOptions": {
     "projectProfile": "Developement",

@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>839.2,1424</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>766.4,1424</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ArchiveTempFolder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,7 +84,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If sap2010:Annotation.AnnotationText="Condition Checks how many days have passed since the last archival process. &#xD;&#xA;If the last archival process has exceeded or equal to Archival duration, it will initiate archival process" Condition="[(((Datetime.Now - Convert.ToDateTime(DateTime.ParseExact(in_Config(&quot;PSArchivedDate&quot;).ToString,&quot;ddMMyyyy&quot;, System.Globalization.CultureInfo.InvariantCulture))).TotalDays) &gt;=  Cdbl(in_Config(&quot;ArchiveDuration&quot;).ToString))]" DisplayName="Check if files needs to be archived" sap:VirtualizedContainerService.HintSize="483.2,840.8" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Condition Checks how many days have passed since the last archival process. &#xA;If the last archival process has exceeded or equal to Archival duration, it will initiate archival process" Condition="[(((Datetime.Now - Convert.ToDateTime(DateTime.ParseExact(in_Config(&quot;PSArchivedDate&quot;).ToString,&quot;ddMMyyyy&quot;, System.Globalization.CultureInfo.InvariantCulture))).TotalDays) &gt;=  Cdbl(in_Config(&quot;ArchiveDuration&quot;).ToString))]" DisplayName="Check if files needs to be archived" sap:VirtualizedContainerService.HintSize="483.2,840.8" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -101,8 +101,8 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message - deleting archive folders" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Deleting archived folder&quot;]" />
           <ui:Delete ContinueOnError="{x:Null}" DisplayName="Delete arhived folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[in_Config(&quot;ArchiveFolderPath&quot;).ToString]" />
-          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PSArchivedDate&quot;).ToString]" DisplayName="Set Asset - Updating arhived date" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[DateTime.Now.ToShortDateString]" />
-          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Archived Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_Config(&quot;PSArchivedDate&quot;).ToString]" />
+          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="TSArchivedDate" DisplayName="Set Asset - Updating arhived date" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[DateTime.Now.ToString(&quot;ddMMyyyy&quot;)]" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Archived Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_Config(&quot;ArchiveFolderPath&quot;).ToString]" />
         </Sequence>
       </If.Then>
     </If>

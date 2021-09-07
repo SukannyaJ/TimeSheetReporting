@@ -1,0 +1,13 @@
+﻿{
+  "Id": "iu7cuWFIMUKofVHzdnMw7A",
+  "Reference": "4I5ZSPUYzEGseBRjI0-ynQ/iu7cuWFIMUKofVHzdnMw7A",
+  "ParentRef": "4I5ZSPUYzEGseBRjI0-ynQ/ZF_LsAlciE24oisu8Sb_KA",
+  "Name": "Available Time",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2021-08-25T11:07:38.8073655Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-08-25T11:07:38.8073655Z"
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="sH9HlaUmhUGRICvA7S-KnA" DesignTimeRectangle="1738, 477, 42, 22" ElementType="Text" FriendlyName="'Export'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aria-role='menuitem' tag='A' aaname='Export' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1629444183829-689877' tag='IFRAME' /&gt;&lt;webctrl parentid='GwzYGDl85c-item-4' tag='SPAN' type='' aaname='Export' check:text='Export' /&gt;" Reference="4I5ZSPUYzEGseBRjI0-ynQ/HGGVjg-mX0Ca_YbSG2Movg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <TargetAnchorable.PointOffset>
+    <PointOffset X="6" Y="-1" />
+  </TargetAnchorable.PointOffset>
+  <imageRef attrName="ImageBase64" xmlns="">09maZHy0NkUiskSpE09aDZQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="90e3ae10709644782570a0ef633dd0e5.png" xmlns="">0s0Nip6c4UkG1v0moCOnSEQ</imageRef>
+</TargetAnchorable>

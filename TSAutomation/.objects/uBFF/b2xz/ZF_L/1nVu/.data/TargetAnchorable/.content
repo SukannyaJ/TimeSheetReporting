@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/r/Report/00O5b000005AUXKEA4/view?queryScope=userFolders" ContentHash="FQhxjlRva0yMjlIDYFBjxg" DesignTimeRectangle="1264, 807, 85, 40" ElementType="Button" FriendlyName="'Export'" FullSelectorArgument="&lt;webctrl aaname='Export' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Export' tag='BUTTON' type='button' check:text='Export' /&gt;" Reference="4I5ZSPUYzEGseBRjI0-ynQ/1nVu4bacyUeAf3d8DZQkHA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="1">
+      <Target DesignTimeRectangle="1285, 808, 42, 37" ElementType="Text" FriendlyName="'Export'" FullSelectorArgument="&lt;webctrl aaname='Export' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Export' tag='SPAN' type='' check:text='Export' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1wcmvR47mSkObp_qPPykldQ</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0hfb5Km7OXEOq-riq8RX1RQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="169fa3651ee0a40b5c5cea39e921aaee.png" xmlns="">0Ro8utaI_IUOC5o5HQcKiLA</imageRef>
+</TargetAnchorable>

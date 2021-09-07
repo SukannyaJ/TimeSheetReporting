@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>803.2,4552</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>583.2,3628.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadSalesForceReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -82,9 +82,10 @@
   <sap:WorkflowViewStateService.ViewState>
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Downloads Timecard details from Salesforce application&#xA;Arguments : &#xA;in_config - Config dictionary" DisplayName="DownloadSalesForceReport" sap:VirtualizedContainerService.HintSize="803.2,4387.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Downloads Timecard details from Salesforce application&#xA;Arguments : &#xA;in_config - Config dictionary" DisplayName="DownloadSalesForceReport" sap:VirtualizedContainerService.HintSize="593.6,3464" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strReportName" />
     </Sequence.Variables>
@@ -95,19 +96,19 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - init" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Download sales force report execution started&quot;]" />
-    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'ViewProfile'" sap:VirtualizedContainerService.HintSize="761.6,360.8" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+    <ui:LogMessage DisplayName="Log Message - init" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Download sales force report execution started&quot;]" />
+    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'ViewProfile'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_1">
       <uix:NCheckState.IfExists>
         <ui:LogMessage DisplayName="Log Message Salesforce app open" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Salesforce application available, dowloading the report&quot;]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:LogMessage>
       </uix:NCheckState.IfExists>
       <uix:NCheckState.IfNotExists>
-        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="375.2,249.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -115,21 +116,20 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Salesforce application closed&quot;]" />
-          <Throw DisplayName="Throw :BE" Exception="[new BusinessRuleException(in_Config(&quot;ErrorMessage_PageNotLoaded&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw DisplayName="Throw :BE" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <InArgument x:TypeArguments="s:Exception">
+              <mva:VisualBasicValue x:TypeArguments="s:Exception" ExpressionText="new BusinessRuleException(in_Config(&quot;ErrorMessage_PageNotLoaded&quot;).ToString)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+            </InArgument>
+          </Throw>
         </Sequence>
       </uix:NCheckState.IfNotExists>
       <uix:NCheckState.Target>
-        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/page/home" ContentHash="sL3BAgbRNkybtzYnFbxycA" DesignTimeRectangle="1864, 106, 40, 37" FriendlyName="'ViewProfile'" ImageBase64="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" InformativeScreenshot="4080adf817ff62f9540fec7beef35aa0.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/MySQqin0akyTR74C8AFpiw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home | Salesforce' /&gt;" SearchSteps="Selector, Image">
-          <uix:TargetAnchorable.FullSelectorArgument>
+        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/page/home" ContentHash="O_jUmrWk8E2Zsugh4ztrYw" DesignTimeRectangle="1864, 106, 40, 37" FriendlyName="'ViewProfile'" FullSelectorArgument="&lt;webctrl tag='DIV' class='*user-profile bgimg*' /&gt;&lt;webctrl tag='SPAN' class='uiImage' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' class='*user-profile bgimg*' /&gt;&lt;webctrl tag='SPAN' class='uiImage' type='' aaname='' /&gt;" ImageBase64="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" InformativeScreenshot="cbadb12e0a38b89b5f1ded9647fa6a8f.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/MySQqin0akyTR74C8AFpiw" SearchSteps="Selector, Image">
+          <uix:TargetAnchorable.ScopeSelectorArgument>
             <InArgument x:TypeArguments="x:String">
-              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">&lt;html app='chrome.exe' title='*Salesforce' /&gt;&lt;webctrl tag='DIV' class='*user-profile bgimg*' /&gt;&lt;webctrl tag='SPAN' class='uiImage' /&gt;</Literal>
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">&lt;html app='chrome.exe' title='*Salesforce' /&gt;</Literal>
             </InArgument>
-          </uix:TargetAnchorable.FullSelectorArgument>
-          <uix:TargetAnchorable.FuzzySelectorArgument>
-            <InArgument x:TypeArguments="x:String">
-              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;header&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span&amp;gt;button&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;span' parentid='151:223;a' tag='SPAN' type='' aaname='' /&gt;</Literal>
-            </InArgument>
-          </uix:TargetAnchorable.FuzzySelectorArgument>
+          </uix:TargetAnchorable.ScopeSelectorArgument>
         </uix:TargetAnchorable>
       </uix:NCheckState.Target>
       <uix:NCheckState.Timeout>
@@ -140,11 +140,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NCheckState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser 'Chrome: Home | Salesforce'" sap:VirtualizedContainerService.HintSize="761.6,309.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser 'Chrome: Home | Salesforce'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -225,11 +225,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message - Salesforce app opened" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Salesforce application opened, reports tab clicked&quot;]">
+    <ui:LogMessage DisplayName="Log Message - Salesforce app opened" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Salesforce application opened, reports tab clicked&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -237,17 +237,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Assign DisplayName="Assign Report Name" sap:VirtualizedContainerService.HintSize="761.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Report Name" sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
           <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strReportName" sap2010:WorkflowViewState.IdRef="VisualBasicReference`1_1" />
         </OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_Config("ReportName").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ReportName&quot;).ToString" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+        </InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Resource Timecard'" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Resource Timecard'" sap:VirtualizedContainerService.HintSize="552,336.8" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
       <uix:NCheckState.IfNotExists>
         <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="249.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
@@ -276,7 +278,7 @@
         </Sequence>
       </uix:NCheckState.IfNotExists>
       <uix:NCheckState.Target>
-        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/o/Report/home?queryScope=mru" ContentHash="wYE3eR6dRUK6AdTU9xGhxw" DesignTimeRectangle="217, 374, 135, 22" ElementType="Text" FriendlyName="'Resource Timecard'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' colName='*Report NameSorted*' tag='A' innertext='{0}' /&gt;&quot;, strReportName)]" FuzzySelectorArgument="&lt;webctrl aaname='Resource Timecard' colName='*Report NameSorted*' tag='A' innertext='Resource Timecard' type='' check:text='Resource Timecard' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAaCAYAAACHI68ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMcSURBVGhD7ZY9ihVBFIV1Ee5B1+ASXIkbMBc0MjIw1Q2IsYmZmYkoCAqCyYiICDKCiEg7H8x5nDlzq7scB0Tf/aDpeVV9/06d1/MuLE0zSZulmabN0kzTZmmmabM007RZmmnaLM00bZZmmjZLM02b5Rx4/v7bcunmq+Xx68PjlX+fr99/Ltfuv1vuPv10vBJm+XD4Y7ly581y8cbLE5cH7BvXHx2c0kMXBsEoe20WH1pC7LNhBBogIEL+75zJLEAA37B9p81ijMyCUdIs/nrW61io0Gif/NrjygNgP9eyN9W49eTjrlbueQ2fCQFGe2uMzMJsl49604zko9cHzz7vaijOa49yoZeeqb6k2b8/4+fC5bOpT/qiBj2iq/a8rnT9LbPwdx42DXmD+Uzu05z2KF7l88bJl0KOzJK59Fz2p7g8cGLJof01MlaQI82C4OpBPVVrfhiZRzP6LKkV99tHBwvEobWgD9eHO59zBq27BtSh302zyF0+nCDx1Xtvd82ChiKx/50ofx5MrnPPgfKZSkgYHSiQg94lniBH5qkY5SZf9WZxjYit1jwfPaRunivrbJGaEVd9Mar5pa/3s/pm4Y5hPLnWqkuJ9UyKQ7NpNOFCEZ+Hkr1Vw0AluJBY2TdXilVB3j8xS8b6muapelOuSpekmlGaZZ+gunpGaN213Pw3lEPONCyI9WFp8m+bZVR/htRC5CHQ41nN4tonW9ozO0ZRH6lZ9gmjulp3LTfNojUFVQXX8JxVfsh17nxmXVDPX6HVMFAdihjVn2WUOzWp+q9ic43DXnvDrWlfzZZrVbx0zLqKdX03zQJ8lmOVPAfnRxbxrPFLWnuZk+LufqBRz5eNqqa/UrXmw4BifXhiFMc6+zwn/Af4Gnm4Ig+BWlmjis014nxGIKf/aM3+uaN9pQfPbv0bgqquYj3flFnUiAbTZ5LpUtJqL/PxrO/7wQoNwKU3ivdWiSM0h+Lz4CSErqp+BbWkgXNeZgGfmyvzQPYvTaiPVlrHZK7ZyCyQdR+++HJK3xNmaZo12izNNG2WZpo2SzNNm6WZZFl+AbRR9MWA7vfdAAAAAElFTkSuQmCC" InformativeScreenshot="69fd0241e7ead80215754fec8e3062f4.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/dCK2LR4rkE-wUNRW2iVzzA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports | Salesforce' /&gt;" SearchSteps="Selector">
+        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/o/Report/home?queryScope=mru" ContentHash="GmMrbn0nV0miIaVQ4ZXmEg" DesignTimeRectangle="217, 374, 135, 22" ElementType="Text" FriendlyName="'Resource Timecard'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' colName='*Report NameSorted*' tag='A' innertext='{0}' /&gt;&quot;, strReportName)]" FuzzySelectorArgument="&lt;webctrl aaname='Resource Timecard' colName='*Report NameSorted*' tag='A' innertext='Resource Timecard' type='' check:text='Resource Timecard' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAaCAYAAACHI68ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMcSURBVGhD7ZY9ihVBFIV1Ee5B1+ASXIkbMBc0MjIw1Q2IsYmZmYkoCAqCyYiICDKCiEg7H8x5nDlzq7scB0Tf/aDpeVV9/06d1/MuLE0zSZulmabN0kzTZmmmabM007RZmmnaLM00bZZmmjZLM02b5Rx4/v7bcunmq+Xx68PjlX+fr99/Ltfuv1vuPv10vBJm+XD4Y7ly581y8cbLE5cH7BvXHx2c0kMXBsEoe20WH1pC7LNhBBogIEL+75zJLEAA37B9p81ijMyCUdIs/nrW61io0Gif/NrjygNgP9eyN9W49eTjrlbueQ2fCQFGe2uMzMJsl49604zko9cHzz7vaijOa49yoZeeqb6k2b8/4+fC5bOpT/qiBj2iq/a8rnT9LbPwdx42DXmD+Uzu05z2KF7l88bJl0KOzJK59Fz2p7g8cGLJof01MlaQI82C4OpBPVVrfhiZRzP6LKkV99tHBwvEobWgD9eHO59zBq27BtSh302zyF0+nCDx1Xtvd82ChiKx/50ofx5MrnPPgfKZSkgYHSiQg94lniBH5qkY5SZf9WZxjYit1jwfPaRunivrbJGaEVd9Mar5pa/3s/pm4Y5hPLnWqkuJ9UyKQ7NpNOFCEZ+Hkr1Vw0AluJBY2TdXilVB3j8xS8b6muapelOuSpekmlGaZZ+gunpGaN213Pw3lEPONCyI9WFp8m+bZVR/htRC5CHQ41nN4tonW9ozO0ZRH6lZ9gmjulp3LTfNojUFVQXX8JxVfsh17nxmXVDPX6HVMFAdihjVn2WUOzWp+q9ic43DXnvDrWlfzZZrVbx0zLqKdX03zQJ8lmOVPAfnRxbxrPFLWnuZk+LufqBRz5eNqqa/UrXmw4BifXhiFMc6+zwn/Af4Gnm4Ig+BWlmjis014nxGIKf/aM3+uaN9pQfPbv0bgqquYj3flFnUiAbTZ5LpUtJqL/PxrO/7wQoNwKU3ivdWiSM0h+Lz4CSErqp+BbWkgXNeZgGfmyvzQPYvTaiPVlrHZK7ZyCyQdR+++HJK3xNmaZo12izNNG2WZpo2SzNNm6WZZFl+AbRR9MWA7vfdAAAAAElFTkSuQmCC" InformativeScreenshot="e763883a0f95d10b1b24a3cfc9525d71.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/dCK2LR4rkE-wUNRW2iVzzA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports | Salesforce' /&gt;" SearchSteps="Selector">
           <uix:TargetAnchorable.Anchors>
             <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
               <uix:Target DesignTimeRectangle="217, 334, 102, 22" ElementType="Text" FriendlyName="'Resource Timecard'" FullSelectorArgument="&lt;webctrl aaname='Report Name' parentid='brandBand_2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Report Name' parentid='brandBand_2' tag='SPAN' type='' check:text='Report Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAAAaCAYAAABfA8lWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI2SURBVGhD7ZZNjsIwDEbngiPEWRDqSSpxjYprVFwCOARsMgn5+xw7TTpTNETK4i1o3cT2c1q+ns+H6nw+XVQjdFGN0EU1QhfVCF1UI3RRjdBFNUIX1QhdVCNQUfdJDbtvtRcYpit5sFnmMdZ1nNQtuX8Z8/f+k2pRhk+WdZsONs9xFu8HUJRQU3OiTjO/9mnJR67qfHQ5rhS13x3U+R7vtysKm5AkH4py4HSGCd+N6vKc1SkTZ4E9PMleZD3fbBOTeQtkT38QdVCDIFcSldZpIOsnfcN4G0frk3Jb6qWhLAomMD4sNDaJiY2FhgDiiWUYyTYurgf8UdT5HgfI58NFlWvFGoZjmqdUP57iivU19d8onHBSbHLNxWFj44ZwstwUx0mKUkjhTDwtwALFVr/6XO7ht92fi+KwGOyb3z+sC3FwjR8EuZd+zzpRSdLidAdswTEGBGhokbkG8+txPZzGfHwW1hj6rCQqW6+Pgb5Jb4qla6Vevp7TFF59cAIg8XgKJGwD6kTxE2ZZEkXXy8VnkSZYGlBfL5wCv/bSiVorqtTL13OaX32jlqfbgpMiJcqKRgEQx/d8gygN5vvCSQjXw7qw1waianppKIvSxGb6xei/OIQnIFGY5kCUsiyKTyb/jjkyoogAQypKYgNRNb00VImii/lGJYU5/HOksfj6ECdHSDY5GSVR6RrrRWlwaLwEDQ6BWTf83kSUYbmXBipqQ8qN7ayhi2qELqoRuqhGeJuozpY81A8Bq29Sm05WeAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
@@ -286,12 +288,12 @@
       </uix:NCheckState.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NCheckState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser 'Chrome: Reports | Salesforce'" sap:VirtualizedContainerService.HintSize="761.6,460.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" Timeout="60" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser 'Chrome: Reports | Salesforce'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" Timeout="60" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -314,17 +316,12 @@
               </InArgument>
             </uix:NClick.MouseButton>
             <uix:NClick.Target>
-              <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/o/Report/home?queryScope=mru" ContentHash="wYE3eR6dRUK6AdTU9xGhxw" DesignTimeRectangle="217, 374, 135, 22" ElementType="Text" FriendlyName="'Resource Timecard'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' colName='*Report NameSorted*' tag='A' innertext='{0}' /&gt;&quot;, strReportName)]" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAaCAYAAACHI68ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMcSURBVGhD7ZY9ihVBFIV1Ee5B1+ASXIkbMBc0MjIw1Q2IsYmZmYkoCAqCyYiICDKCiEg7H8x5nDlzq7scB0Tf/aDpeVV9/06d1/MuLE0zSZulmabN0kzTZmmmabM007RZmmnaLM00bZZmmjZLM02b5Rx4/v7bcunmq+Xx68PjlX+fr99/Ltfuv1vuPv10vBJm+XD4Y7ly581y8cbLE5cH7BvXHx2c0kMXBsEoe20WH1pC7LNhBBogIEL+75zJLEAA37B9p81ijMyCUdIs/nrW61io0Gif/NrjygNgP9eyN9W49eTjrlbueQ2fCQFGe2uMzMJsl49604zko9cHzz7vaijOa49yoZeeqb6k2b8/4+fC5bOpT/qiBj2iq/a8rnT9LbPwdx42DXmD+Uzu05z2KF7l88bJl0KOzJK59Fz2p7g8cGLJof01MlaQI82C4OpBPVVrfhiZRzP6LKkV99tHBwvEobWgD9eHO59zBq27BtSh302zyF0+nCDx1Xtvd82ChiKx/50ofx5MrnPPgfKZSkgYHSiQg94lniBH5qkY5SZf9WZxjYit1jwfPaRunivrbJGaEVd9Mar5pa/3s/pm4Y5hPLnWqkuJ9UyKQ7NpNOFCEZ+Hkr1Vw0AluJBY2TdXilVB3j8xS8b6muapelOuSpekmlGaZZ+gunpGaN213Pw3lEPONCyI9WFp8m+bZVR/htRC5CHQ41nN4tonW9ozO0ZRH6lZ9gmjulp3LTfNojUFVQXX8JxVfsh17nxmXVDPX6HVMFAdihjVn2WUOzWp+q9ic43DXnvDrWlfzZZrVbx0zLqKdX03zQJ8lmOVPAfnRxbxrPFLWnuZk+LufqBRz5eNqqa/UrXmw4BifXhiFMc6+zwn/Af4Gnm4Ig+BWlmjis014nxGIKf/aM3+uaN9pQfPbv0bgqquYj3flFnUiAbTZ5LpUtJqL/PxrO/7wQoNwKU3ivdWiSM0h+Lz4CSErqp+BbWkgXNeZgGfmyvzQPYvTaiPVlrHZK7ZyCyQdR+++HJK3xNmaZo12izNNG2WZpo2SzNNm6WZZFl+AbRR9MWA7vfdAAAAAElFTkSuQmCC" InformativeScreenshot="69fd0241e7ead80215754fec8e3062f4.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/dCK2LR4rkE-wUNRW2iVzzA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports | Salesforce' /&gt;" SearchSteps="Selector">
+              <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/o/Report/home?queryScope=mru" ContentHash="GmMrbn0nV0miIaVQ4ZXmEg" DesignTimeRectangle="217, 374, 135, 22" ElementType="Text" FriendlyName="'Resource Timecard'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' colName='*Report NameSorted*' tag='A' innertext='{0}' /&gt;&quot;, strReportName)]" FuzzySelectorArgument="&lt;webctrl aaname='Resource Timecard' colName='*Report NameSorted*' tag='A' innertext='Resource Timecard' type='' check:text='Resource Timecard' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAaCAYAAACHI68ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMcSURBVGhD7ZY9ihVBFIV1Ee5B1+ASXIkbMBc0MjIw1Q2IsYmZmYkoCAqCyYiICDKCiEg7H8x5nDlzq7scB0Tf/aDpeVV9/06d1/MuLE0zSZulmabN0kzTZmmmabM007RZmmnaLM00bZZmmjZLM02b5Rx4/v7bcunmq+Xx68PjlX+fr99/Ltfuv1vuPv10vBJm+XD4Y7ly581y8cbLE5cH7BvXHx2c0kMXBsEoe20WH1pC7LNhBBogIEL+75zJLEAA37B9p81ijMyCUdIs/nrW61io0Gif/NrjygNgP9eyN9W49eTjrlbueQ2fCQFGe2uMzMJsl49604zko9cHzz7vaijOa49yoZeeqb6k2b8/4+fC5bOpT/qiBj2iq/a8rnT9LbPwdx42DXmD+Uzu05z2KF7l88bJl0KOzJK59Fz2p7g8cGLJof01MlaQI82C4OpBPVVrfhiZRzP6LKkV99tHBwvEobWgD9eHO59zBq27BtSh302zyF0+nCDx1Xtvd82ChiKx/50ofx5MrnPPgfKZSkgYHSiQg94lniBH5qkY5SZf9WZxjYit1jwfPaRunivrbJGaEVd9Mar5pa/3s/pm4Y5hPLnWqkuJ9UyKQ7NpNOFCEZ+Hkr1Vw0AluJBY2TdXilVB3j8xS8b6muapelOuSpekmlGaZZ+gunpGaN213Pw3lEPONCyI9WFp8m+bZVR/htRC5CHQ41nN4tonW9ozO0ZRH6lZ9gmjulp3LTfNojUFVQXX8JxVfsh17nxmXVDPX6HVMFAdihjVn2WUOzWp+q9ic43DXnvDrWlfzZZrVbx0zLqKdX03zQJ8lmOVPAfnRxbxrPFLWnuZk+LufqBRz5eNqqa/UrXmw4BifXhiFMc6+zwn/Af4Gnm4Ig+BWlmjis014nxGIKf/aM3+uaN9pQfPbv0bgqquYj3flFnUiAbTZ5LpUtJqL/PxrO/7wQoNwKU3ivdWiSM0h+Lz4CSErqp+BbWkgXNeZgGfmyvzQPYvTaiPVlrHZK7ZyCyQdR+++HJK3xNmaZo12izNNG2WZpo2SzNNm6WZZFl+AbRR9MWA7vfdAAAAAElFTkSuQmCC" InformativeScreenshot="e763883a0f95d10b1b24a3cfc9525d71.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/dCK2LR4rkE-wUNRW2iVzzA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reports | Salesforce' /&gt;" SearchSteps="Selector">
                 <uix:TargetAnchorable.Anchors>
                   <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                     <uix:Target DesignTimeRectangle="217, 334, 102, 22" ElementType="Text" FriendlyName="'Resource Timecard'" FullSelectorArgument="&lt;webctrl aaname='Report Name' parentid='brandBand_2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Report Name' parentid='brandBand_2' tag='SPAN' type='' check:text='Report Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAAAaCAYAAABfA8lWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI2SURBVGhD7ZZNjsIwDEbngiPEWRDqSSpxjYprVFwCOARsMgn5+xw7TTpTNETK4i1o3cT2c1q+ns+H6nw+XVQjdFGN0EU1QhfVCF1UI3RRjdBFNUIX1QhdVCNQUfdJDbtvtRcYpit5sFnmMdZ1nNQtuX8Z8/f+k2pRhk+WdZsONs9xFu8HUJRQU3OiTjO/9mnJR67qfHQ5rhS13x3U+R7vtysKm5AkH4py4HSGCd+N6vKc1SkTZ4E9PMleZD3fbBOTeQtkT38QdVCDIFcSldZpIOsnfcN4G0frk3Jb6qWhLAomMD4sNDaJiY2FhgDiiWUYyTYurgf8UdT5HgfI58NFlWvFGoZjmqdUP57iivU19d8onHBSbHLNxWFj44ZwstwUx0mKUkjhTDwtwALFVr/6XO7ht92fi+KwGOyb3z+sC3FwjR8EuZd+zzpRSdLidAdswTEGBGhokbkG8+txPZzGfHwW1hj6rCQqW6+Pgb5Jb4qla6Vevp7TFF59cAIg8XgKJGwD6kTxE2ZZEkXXy8VnkSZYGlBfL5wCv/bSiVorqtTL13OaX32jlqfbgpMiJcqKRgEQx/d8gygN5vvCSQjXw7qw1waianppKIvSxGb6xei/OIQnIFGY5kCUsiyKTyb/jjkyoogAQypKYgNRNb00VImii/lGJYU5/HOksfj6ECdHSDY5GSVR6RrrRWlwaLwEDQ6BWTf83kSUYbmXBipqQ8qN7ayhi2qELqoRuqhGeJuozpY81A8Bq29Sm05WeAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                   </scg:List>
                 </uix:TargetAnchorable.Anchors>
-                <uix:TargetAnchorable.FuzzySelectorArgument>
-                  <InArgument x:TypeArguments="x:String">
-                    <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_7">&lt;webctrl aaname='Resource Timecard' colName='*Report NameSorted*' tag='A' innertext='Resource Timecard' type='' check:text='Resource Timecard' /&gt;</Literal>
-                  </InArgument>
-                </uix:TargetAnchorable.FuzzySelectorArgument>
               </uix:TargetAnchorable>
             </uix:NClick.Target>
             <uix:NClick.VerifyOptions>
@@ -355,23 +352,14 @@
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Edit'" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_4" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Edit'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_4" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
       <uix:NCheckState.Target>
-        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="lxpc5PlYz06siU5XbhJOqw" DesignTimeRectangle="1781, 250, 68, 40" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='Edit' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643411566-960705' tag='IFRAME' /&gt;&lt;webctrl parentid='qvXidAMoDA' tag='BUTTON' type='button' aaname='Edit' check:text='Edit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAsCAYAAADGiP4LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGdSURBVGhD7ZpBSsNQEIb1EB7CM3gET+IF3Lt25cKtXkBcewB3bkRBsBKTtChSJWIiiEgY+6eZNE1fHBdNqL7/g4HX9x6B+Zh5dDFrWZoKoz0oyAgKMmJB0PN4LKNhLOF9IMHdwMuIw7BazwkaxVERr0kiPgMxSiWoqJyJnDzPyyN/cQpCW/leOYpTUDR5c8gUp6D6pu9QkAEFGVCQAQUZUJABBRlQkAEFGVCQQa+CLh8/ZGPvRtZ3r+fi7DYrbyyCs+2jSN4/c3nKvmRzfyA7pw/laff0LmjrMCgS/S11QS4Ozl86FUZBBisnCEK09dBOxxdJJQiBNaTout6q2F82KyUIcvBG4R7QN8clSPl3FdR8pCEAIlzJg3qLeSGorYK0WiCkDgWVYA9n2l4KBZW4kgf4TUElSFbfJID7eLMsQXreBb0Lcv2Tbias+0j85OrtR0GQCanN7yyLXgX9RSjIgIIMKMiAggwoyICCDCjIgIIMnIIwckemOAVxgGqGUxBH8GY4BRVVxCHOglZBCB0DxkgeLvoYrWPAjGak8g1sED2TOAq0SAAAAABJRU5ErkJggg==" InformativeScreenshot="2a6c02d0873783793e9952aad62d410f.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/5Ml0W-v3t0WqEN2lU9eTFQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" SearchSteps="Selector, Image">
-          <uix:TargetAnchorable.Anchors>
-            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-              <uix:Target DesignTimeRectangle="1681, 250, 40, 40" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl name='builder-1628173237350-419865' tag='IFRAME' /&gt;&lt;webctrl parentid='NgWb325mRn' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1628173237350-419865' tag='IFRAME' /&gt;&lt;webctrl parentid='NgWb325mRn' tag='BUTTON' type='button' aaname='Filters' check:text='Filters' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFRSURBVFhH7dnPasJAEMdx31cQD0K9CPYitKdivRR9g1Jvto/Q9qjHpi0tKgV7SzXHjP5CR+Imh/zZIVmZLwyiRvbDsqCYxp/vk0ujYOlJgH83G1p+f9Hnu0cf3lslg7VhgMX0nYB/1uvowt12S2EYUlVhbRhggSluPIJ5Z6uEmsFi7vQRzDtbt3inE2CcmzrtLgcTbAkwDntdg03BkilYOgVLp2DprIFXqyWNhje5x8u5ltUdvr4aULvVzDy4PgiC/09nyyoYi2dFX/Z7ubHIKhjhaHQvOqlIHryP64pkHYyASYPy5D238UTA6PXlORWL18skBkbTh/sTLJ6XTRSMJuO7CItHG4mDnx5nEbjMuY2nYDMFS4MXizndHn4zFP2iMBMH207B0ilYOgVLdx5g5/5ude4PbeduGWCcuinDwzuNc4PDXsVgbXNneRLgeo9Pe8kON8Mb21IDAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-            </scg:List>
-          </uix:TargetAnchorable.Anchors>
-          <uix:TargetAnchorable.PointOffset>
-            <uix:PointOffset X="6" Y="4" />
-          </uix:TargetAnchorable.PointOffset>
-        </uix:TargetAnchorable>
+        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="tEiZ-L4SzUiE1mzZlLNjdQ" DesignTimeRectangle="1781, 250, 68, 40" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='Edit' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1629443221447-659543' tag='IFRAME' /&gt;&lt;webctrl parentid='3Ilc2UIpf_' tag='BUTTON' type='button' aaname='Edit' check:text='Edit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAsCAYAAADGiP4LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGdSURBVGhD7ZpBSsNQEIb1EB7CM3gET+IF3Lt25cKtXkBcewB3bkRBsBKTtChSJWIiiEgY+6eZNE1fHBdNqL7/g4HX9x6B+Zh5dDFrWZoKoz0oyAgKMmJB0PN4LKNhLOF9IMHdwMuIw7BazwkaxVERr0kiPgMxSiWoqJyJnDzPyyN/cQpCW/leOYpTUDR5c8gUp6D6pu9QkAEFGVCQAQUZUJABBRlQkAEFGVCQQa+CLh8/ZGPvRtZ3r+fi7DYrbyyCs+2jSN4/c3nKvmRzfyA7pw/laff0LmjrMCgS/S11QS4Ozl86FUZBBisnCEK09dBOxxdJJQiBNaTout6q2F82KyUIcvBG4R7QN8clSPl3FdR8pCEAIlzJg3qLeSGorYK0WiCkDgWVYA9n2l4KBZW4kgf4TUElSFbfJID7eLMsQXreBb0Lcv2Tbias+0j85OrtR0GQCanN7yyLXgX9RSjIgIIMKMiAggwoyICCDCjIgIIMnIIwckemOAVxgGqGUxBH8GY4BRVVxCHOglZBCB0DxkgeLvoYrWPAjGak8g1sED2TOAq0SAAAAABJRU5ErkJggg==" InformativeScreenshot="eefc74df87600959ab664c60c6ea1d92.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/U8g_bOxfpUyTSZ_5k3Nw7g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
       </uix:NCheckState.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -380,7 +368,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NCheckState>
-    <ui:LogMessage DisplayName="Log Message - Selected report name" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+    <ui:LogMessage DisplayName="Log Message - Selected report name" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_4">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <Literal x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="Literal`1_1" Value="Info" />
@@ -398,7 +386,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser 'Chrome: Resource Timecard | Salesforce1" sap:VirtualizedContainerService.HintSize="761.6,555.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser 'Chrome: Resource Timecard | Salesforce1" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -411,7 +399,7 @@
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="333.6,204" sap2010:WorkflowViewState.IdRef="NClick_3">
+            <uix:NClick DelayBefore="5" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="333.6,204" sap2010:WorkflowViewState.IdRef="NClick_3">
               <uix:NClick.ClickType>
                 <InArgument x:TypeArguments="uix:NClickType">
                   <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_35" />
@@ -428,13 +416,7 @@
                 </InArgument>
               </uix:NClick.MouseButton>
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="lxpc5PlYz06siU5XbhJOqw" DesignTimeRectangle="1781, 250, 68, 40" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='Edit' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643411566-960705' tag='IFRAME' /&gt;&lt;webctrl parentid='qvXidAMoDA' tag='BUTTON' type='button' aaname='Edit' check:text='Edit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAsCAYAAADGiP4LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGdSURBVGhD7ZpBSsNQEIb1EB7CM3gET+IF3Lt25cKtXkBcewB3bkRBsBKTtChSJWIiiEgY+6eZNE1fHBdNqL7/g4HX9x6B+Zh5dDFrWZoKoz0oyAgKMmJB0PN4LKNhLOF9IMHdwMuIw7BazwkaxVERr0kiPgMxSiWoqJyJnDzPyyN/cQpCW/leOYpTUDR5c8gUp6D6pu9QkAEFGVCQAQUZUJABBRlQkAEFGVCQQa+CLh8/ZGPvRtZ3r+fi7DYrbyyCs+2jSN4/c3nKvmRzfyA7pw/laff0LmjrMCgS/S11QS4Ozl86FUZBBisnCEK09dBOxxdJJQiBNaTout6q2F82KyUIcvBG4R7QN8clSPl3FdR8pCEAIlzJg3qLeSGorYK0WiCkDgWVYA9n2l4KBZW4kgf4TUElSFbfJID7eLMsQXreBb0Lcv2Tbias+0j85OrtR0GQCanN7yyLXgX9RSjIgIIMKMiAggwoyICCDCjIgIIMnIIwckemOAVxgGqGUxBH8GY4BRVVxCHOglZBCB0DxkgeLvoYrWPAjGak8g1sED2TOAq0SAAAAABJRU5ErkJggg==" InformativeScreenshot="2a6c02d0873783793e9952aad62d410f.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/5Ml0W-v3t0WqEN2lU9eTFQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" SearchSteps="Selector, Image">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1681, 250, 40, 40" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl name='builder-1628173237350-419865' tag='IFRAME' /&gt;&lt;webctrl parentid='NgWb325mRn' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1628173237350-419865' tag='IFRAME' /&gt;&lt;webctrl parentid='NgWb325mRn' tag='BUTTON' type='button' aaname='Filters' check:text='Filters' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFRSURBVFhH7dnPasJAEMdx31cQD0K9CPYitKdivRR9g1Jvto/Q9qjHpi0tKgV7SzXHjP5CR+Imh/zZIVmZLwyiRvbDsqCYxp/vk0ujYOlJgH83G1p+f9Hnu0cf3lslg7VhgMX0nYB/1uvowt12S2EYUlVhbRhggSluPIJ5Z6uEmsFi7vQRzDtbt3inE2CcmzrtLgcTbAkwDntdg03BkilYOgVLp2DprIFXqyWNhje5x8u5ltUdvr4aULvVzDy4PgiC/09nyyoYi2dFX/Z7ubHIKhjhaHQvOqlIHryP64pkHYyASYPy5D238UTA6PXlORWL18skBkbTh/sTLJ6XTRSMJuO7CItHG4mDnx5nEbjMuY2nYDMFS4MXizndHn4zFP2iMBMH207B0ilYOgVLdx5g5/5ude4PbeduGWCcuinDwzuNc4PDXsVgbXNneRLgeo9Pe8kON8Mb21IDAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
+                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="tEiZ-L4SzUiE1mzZlLNjdQ" DesignTimeRectangle="1781, 250, 68, 40" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='Edit' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1629443221447-659543' tag='IFRAME' /&gt;&lt;webctrl parentid='3Ilc2UIpf_' tag='BUTTON' type='button' aaname='Edit' check:text='Edit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAsCAYAAADGiP4LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGdSURBVGhD7ZpBSsNQEIb1EB7CM3gET+IF3Lt25cKtXkBcewB3bkRBsBKTtChSJWIiiEgY+6eZNE1fHBdNqL7/g4HX9x6B+Zh5dDFrWZoKoz0oyAgKMmJB0PN4LKNhLOF9IMHdwMuIw7BazwkaxVERr0kiPgMxSiWoqJyJnDzPyyN/cQpCW/leOYpTUDR5c8gUp6D6pu9QkAEFGVCQAQUZUJABBRlQkAEFGVCQQa+CLh8/ZGPvRtZ3r+fi7DYrbyyCs+2jSN4/c3nKvmRzfyA7pw/laff0LmjrMCgS/S11QS4Ozl86FUZBBisnCEK09dBOxxdJJQiBNaTout6q2F82KyUIcvBG4R7QN8clSPl3FdR8pCEAIlzJg3qLeSGorYK0WiCkDgWVYA9n2l4KBZW4kgf4TUElSFbfJID7eLMsQXreBb0Lcv2Tbias+0j85OrtR0GQCanN7yyLXgX9RSjIgIIMKMiAggwoyICCDCjIgIIMnIIwckemOAVxgGqGUxBH8GY4BRVVxCHOglZBCB0DxkgeLvoYrWPAjGak8g1sED2TOAq0SAAAAABJRU5ErkJggg==" InformativeScreenshot="eefc74df87600959ab664c60c6ea1d92.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/U8g_bOxfpUyTSZ_5k3Nw7g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -465,7 +447,7 @@
         </InArgument>
       </uix:NApplicationCard.CloseMode>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="s8uh2uqnT0aqo00xp4JYuw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="9420eb89a20418b09a375d899a811c27.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/ZF_LsAlciE24oisu8Sb_KA" Selector="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" />
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="KB9Nuwv1Mk63y7l2xwv1sA" IconBase64="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" InformativeScreenshot="b81d19828d4ae898620998ce637c5207.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/ZF_LsAlciE24oisu8Sb_KA" Selector="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" />
       </uix:NApplicationCard.TargetApp>
       <uix:NApplicationCard.Timeout>
         <InArgument x:TypeArguments="x:Double">
@@ -474,22 +456,38 @@
       </uix:NApplicationCard.Timeout>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message Click on edit report" sap:VirtualizedContainerService.HintSize="761.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clicked on edit report&quot;]">
+    <ui:LogMessage DisplayName="Log Message Click on edit report" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clicked on edit report&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Filters'" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_5" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Filters'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_5" Mode="WaitDisappear" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
       <uix:NCheckState.Target>
-        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="zL4WcydZ6U2H03T8rlEA_Q" DesignTimeRectangle="242, 290, 50, 50" FriendlyName="'Filters'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='H2' aaname='Filters' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl parentid='ohNf0JtkF-slds-tabs_tab-1' tag='H2' type='' aaname='Filters' check:text='Filters' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAA2CAYAAACFrsqnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFISURBVGhD7ZRBbsIwEEW5L6rEHUDiEEi+BohLRFkWxJrcYpo4jhh7nEIFdT/uf5IXeGzPPHvIQiqhHpHP80VqGGwtNCiCBkXQoAgaFEGDImhQBA2KoEERNCiCxs9EuqOsP1aya8PvnsatZOnUxB8Ri4RCl8lY77so/iYiWzmEuh/BinRy2Cj5QvxTkUw8Egmtl21LTys7Hd8c5Roinun8djrHSRNCPo/aq9t74LUinrkXGSXM/0vLTBeRCF7323iudY+I3KzHoQp/QsQXE63rSc8L+dMibQ5LsRfx68wlDeP7i/IEwWhtQlER224J9/L3LWXkA8VETJ/nuJffkz//F0Tyc+PetID+A6DXzeRv3O3rVVRkKnpogyihms+2yKyI3mMlBmKRN4YiaFAEDYqgQRE0KIIGRdCgCBoUQWNxOZ+khlHJi4h8Ad4CAxOOY3tyAAAAAElFTkSuQmCC" InformativeScreenshot="55fa6771e6a21836693dbfc786cd11ca.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/cdFR8E5eFkeAp8EOmrcCag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, Image" />
+        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="zL4WcydZ6U2H03T8rlEA_Q" DesignTimeRectangle="242, 290, 50, 50" FriendlyName="'Filters'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAA2CAYAAACFrsqnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFISURBVGhD7ZRBbsIwEEW5L6rEHUDiEEi+BohLRFkWxJrcYpo4jhh7nEIFdT/uf5IXeGzPPHvIQiqhHpHP80VqGGwtNCiCBkXQoAgaFEGDImhQBA2KoEERNCiCxs9EuqOsP1aya8PvnsatZOnUxB8Ri4RCl8lY77so/iYiWzmEuh/BinRy2Cj5QvxTkUw8Egmtl21LTys7Hd8c5Roinun8djrHSRNCPo/aq9t74LUinrkXGSXM/0vLTBeRCF7323iudY+I3KzHoQp/QsQXE63rSc8L+dMibQ5LsRfx68wlDeP7i/IEwWhtQlER224J9/L3LWXkA8VETJ/nuJffkz//F0Tyc+PetID+A6DXzeRv3O3rVVRkKnpogyihms+2yKyI3mMlBmKRN4YiaFAEDYqgQRE0KIIGRdCgCBoUQWNxOZ+khlHJi4h8Ad4CAxOOY3tyAAAAAElFTkSuQmCC" InformativeScreenshot="55fa6771e6a21836693dbfc786cd11ca.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/cdFR8E5eFkeAp8EOmrcCag" SearchSteps="Selector, Image">
+          <uix:TargetAnchorable.FullSelectorArgument>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_3">&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='H2' aaname='Filters' /&gt;</Literal>
+            </InArgument>
+          </uix:TargetAnchorable.FullSelectorArgument>
+          <uix:TargetAnchorable.FuzzySelectorArgument>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_5">&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl parentid='ohNf0JtkF-slds-tabs_tab-1' tag='H2' type='' aaname='Filters' check:text='Filters' /&gt;</Literal>
+            </InArgument>
+          </uix:TargetAnchorable.FuzzySelectorArgument>
+          <uix:TargetAnchorable.ScopeSelectorArgument>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_4">&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;</Literal>
+            </InArgument>
+          </uix:TargetAnchorable.ScopeSelectorArgument>
+        </uix:TargetAnchorable>
       </uix:NCheckState.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -498,13 +496,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NCheckState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser 'Chrome: Report Builder | Salesforce'" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser 'Chrome: Report Builder | Salesforce'" sap:VirtualizedContainerService.HintSize="552,1349.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,1128" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="304,1092.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strStartDate" />
               <Variable x:TypeArguments="x:String" Name="strEndDate" />
@@ -515,7 +513,7 @@
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick DisplayName="Click 'Filters'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_4">
+            <uix:NClick DisplayName="Click 'Filters'" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NClick_4">
               <uix:NClick.ClickType>
                 <InArgument x:TypeArguments="uix:NClickType">
                   <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_27" />
@@ -560,7 +558,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Edit FilterStart'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_5" MouseButton="Left">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Edit FilterStart'" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NClick_5" MouseButton="Left">
               <uix:NClick.KeyModifiers>
                 <InArgument x:TypeArguments="uix:NKeyModifiers">
                   <Literal x:TypeArguments="uix:NKeyModifiers" sap2010:WorkflowViewState.IdRef="Literal`1_29" />
@@ -587,10 +585,16 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Retry="True" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]" />
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_6" Value="True" />
+                    </InArgument>
+                  </uix:VerifyExecutionOptions.Retry>
+                </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <Assign DisplayName="Assign start date" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Assign start date" sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strStartDate]</OutArgument>
               </Assign.To>
@@ -598,7 +602,7 @@
                 <InArgument x:TypeArguments="x:String">[IF(in_Config.ContainsKey("StartDate"), in_Config("StartDate").ToString, Date.Today.AddDays(-8).ToString("MM/dd/yyyy"))]</InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'start Date'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[strStartDate]">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'start Date'" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[strStartDate]">
               <uix:NTypeInto.DeselectAfter>
                 <InArgument x:TypeArguments="x:Boolean">
                   <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_15" />
@@ -630,10 +634,16 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
               <uix:NTypeInto.VerifyOptions>
-                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears" Retry="True" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]" />
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_7" Value="True" />
+                    </InArgument>
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Apply' button" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Apply' button" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="iXbZdpqAOUqFo7WiCNRD_w" DesignTimeRectangle="672, 800, 71, 35" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aaname='Apply' tag='BUTTON' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAnCAYAAABHeLXLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJESURBVGhD7ZrNSsNQEIV14yP4Kj6A7+FLKOK6r+BKcK3uddmtGzcKKi78QVCoIkrxB1qpXjnRE6e3k/am90YwmQOH/Mzc5M6XSWhJZpwpWAarhAxWCRmsEhqBtXXYdQvrF25u7cTNrh43zqgb9YODryFYy3sdN986Uw/SNIMDeEjlsEDSQA0bPGSH5bDQetqAphtcqBxWU59RkwwuVA5LSzR/mzJYAaYMVoApgxVgymAFmDJYAaYMVoCpymC1z19cf/DpWu17NR7rpZ0b99z7cJsHT2o8palKYC1uXLnLx35WDKBpObGuDSx0E2BtH3Xdbfc9g6flxbg2sNBNsFYQwAEg4qd3vZ+zu2y9TI48Ni4O1v1bHvkpOptKDgtFPLwO8oljwhoIiBC5j3khORKWhIsY43IeMaaSw8LkMXEUwG0Uhclj2y9ajmNeSI6EhRhA+eeV2zGmksNCgf4VlkURhH97oAPQCRLWuBz/uIhhG0uOZyzWVFJYLECTf4ulhgXjHNiWeXL8tKaSwsJEUSSKlfu1q+6DkGNDcjRYWGdn+7dwjKlksIoK9GNclz9Y/cJDcjRY2IeO8vfHmkoGS3aPFgcoAFjZ7WTL/eu3bElJyIQ1LkeDBaOjMAbHkPtjTCV/wE+y7DItDofkFJm3oRab1lStYKHLqvg/StUCFuAAUlV/3Kk/h/UfTRmsAFMGK8BUDstesupWX7La63vd6ut7+zBk1IUfhkD2ydGvwaHwkyMKJNF6TX2GoW7ULzuKGoFlKpJzX7ax0g1of6ChAAAAAElFTkSuQmCC" Reference="4I5ZSPUYzEGseBRjI0-ynQ/5uWoWB9UkkuY1Agr43faMQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, Image" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.FuzzySelectorArgument>
@@ -644,16 +654,26 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                   <uix:VerifyExecutionOptions.Retry>
                     <InArgument x:TypeArguments="x:Boolean">
                       <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_17" Value="True" />
                     </InArgument>
                   </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double">
+                      <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                    </InArgument>
+                  </uix:VerifyExecutionOptions.Timeout>
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Edit FilterEnd'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick DisplayName="Click 'Edit FilterEnd'" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.ClickType>
+                <InArgument x:TypeArguments="uix:NClickType">
+                  <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_8" />
+                </InArgument>
+              </uix:NClick.ClickType>
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="Y2PWzMof4kevUcdD6EY4vA" DesignTimeRectangle="70, 767, 239, 58" ElementType="Button" FriendlyName="'Edit FilterEnd'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='Edit FilterEnd Dateequals*' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl id='DIhkVfl-8C5' tag='BUTTON' type='button' aaname='Edit FilterEnd Dateequals &amp;quot;&amp;quot;' check:text='Edit FilterEnd Dateequals &amp;quot;&amp;quot;' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPMAAAA+CAYAAAD+gC1VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAP4SURBVHhe7dxPS+NMHMDxhX09+258AV5FBM9eVTx58ljo0avgRfENeBGlx3VdwdJiUU+tXjubmcwkk0z6x7FdO79+PxAekrSZLDzfzKSw+0MBEIGYASEqMQ+HI9Xt9dX9w6P6/ecvGxtbQlsR88vrm3rq9tTo/UONx2N7FEAqTMx6RtYhEzGQLhOzXlrrGRlAukzM+h2ZWRlIm4lZvzwDSBsxA0IQMyAEMQNCEDMgBDEDQhAzIAQxA0IQMyBEXMydttre2a1tR+pyYM/H0Nc8uFLPdjfQOOau2r/4yqCAHPExTwsvxjwxB+c7qqWj/tS9DNTlwa5qdewuIETiMWt5nPPP0MQMmZYQcz5btjp5NG45HMSjr2HPbe+01V10zJn6ucq1vdAHV2rfO155NaidY/mO1CwtZj+U54ujbD8LNt+1sfnv2HMsl6eNaUIsr3/X9sYy5/yxGmbm4DPugWR3gQQs7gewIrQ8hOrMpo+5WCYsi6c+IDIzY/Zj9NXjDWO+a4f3Yx5AbWpGOpa4zLa7hn9swqz35Zi92dgG6z9sJsccfrbYpt0PsGK+KeaGWfQLMZtZ1J0zYfsz7ayZOd/nHRmp+4aYm+OpBNlk4pjV8cLl8ayY82U2S2qk7htibvhBzM6mn445mIUz+nPetfOxwpgr37HXqdxzdp3qnwFYbYv7AayIYXbMmovMbDrSqQ+ITOOY/ntyycy09jP7F51gJi6v5S3369efdi/ACoqLGcDKIWZACGIGhCBmQAhiBoQgZkAIYgaEIGZACGIGhCBmQAhiBoQQEHNfnW5tqo2zvt0H1tPax3x97L57ow5/najr/LBSg3O1Yfefz/Z4WGDlETMxQwhiJmYIER+z+Z99U/102/GNPVHSoRTndRi3J/l/7XkdSfA9c909der92wHmc95Y1bAaYjbjeGM33BsgTVzMQXB5UH40JuSt8/Iv+BfxfzbmbMb0P2Ovc3hr9+sxz/o+IFRUzOXS1OPPukFQVuTMXFWfiWv7tTGAdRERs52F/WVssdmIdFD+rOxEx6zfZ6tjTYzZu7/ggQMIFh1zucxtsMCY3fvyxGV1sO+UDwCixjqIXmYHEfpMtOFSOQ+zFnM9+sp3m0KdN+Zc4xiAQHE/gJngarNzNqMe1gKb9QOYO1Zex82m5YOg/uBwM/XEmLN78++LmLEu4mLWbNDl5kVq2KDdeR2U+U71cy7O4hrBO3P1fXnj7Gb6zFy/L0LGmoiPOUZDzAAWg5gBIYgZEIKYASH+b8wAloaYASGIGRCCmAEhTMz3D49qPB6bAwDSZGLu9vpq9P5hDgBIk4l5OBypp26P2RlImIlZe3l9M0HrGZqogdQo9Q/PPoICXNsv4gAAAABJRU5ErkJggg==" InformativeScreenshot="dfbecbbd6ba59f35302362241da5160c.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/W9tzR7Bt_0e512zq4Nfp3A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
@@ -673,20 +693,28 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <Assign DisplayName="Assign end date" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Assign end date" sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strEndDate]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[IF(in_Config.ContainsKey("EndDate"), in_Config("EndDate").ToString, Date.Today.AddDays(-2).ToString("MM/dd/yyyy"))]</InArgument>
+                <InArgument x:TypeArguments="x:String">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IF(in_Config.ContainsKey(&quot;EndDate&quot;), in_Config(&quot;EndDate&quot;).ToString, Date.Today.AddDays(-2).ToString(&quot;MM/dd/yyyy&quot;))" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+                </InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="False" DisplayName="Type Into 'Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="[strEndDate]">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="False" DisplayName="Type Into 'Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="[strEndDate]">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="v5CHdi5hWkGWZz497ETQ-Q" DesignTimeRectangle="508, 730, 230, 40" ElementType="InputBox" FriendlyName="'7/24/2021'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='INPUT' type='text' aaname='Date' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl id='NPZO8VUZbb' tag='INPUT' type='text' aaname='Date' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOoAAAAsCAYAAABrJSTnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPwSURBVHhe7Z27bhNBFIbpwgvBSxAeIU8QhCiQIAUSFAEhmghoENSh4FaFUAFVetLlAhIQmlwah6TMoG/JMSeTmU28jp2d5f+ko9257PE6ms/Ha1vZC0EI0XokqhAFIFGFKACJKkQBHBO119sNPzZ+hdX1b2Fl7atCoRhT4Bzu4WDMEVE3t7bD9x8bYff3Xjg4ODjsFUKMA5zDPRzERU9fVCxmggQV4nzBQVz0lbUvKiUXm4UQ5w8u4qTRF5X3x6qmQrQDXMRJoy8qF7NCiPbgnZSoQrQUiSpEAUhUIQpAogpRABJViAKQqEI0ZG1t9XDvOHVjTZCoQjTg86eP4cb16WobUzfWFIkqxCnZ398PHxYXqnj6eK6Ska311Y1x7DCMRNSdnZ1wdXIyXJyYOBb3Z2cPZ/2D+VNTU2FlZaWKy5cu1c437HFycwbNu7S01B9nLscY/KGvTU/3x3lc8qd4OT9fe96iTBbfL1QCNgmOHYaxVVQvTYwtbGRgawKYHIynoD8nHQySl/OavHKlf35I62VkLn0GbXKQy/AvBrlzEuXyX4hq0sSYNF4CD/2xEIAUiM/YWeQlhxfXjvd9nviFhzZikzf3XEXZsCb4kKhJxOt3UMYiaryoPSacVa6YlKgmEWMIkZJikLw+n6dOuLrnJFHFWTMWUVOyGSzoXNWClIhehNQ40HfavDnp6oTjOeWuUyVqN+n0W99ctYK6qgQs+FiGuFJ64YxB8+bmMy/1AsM8rkVTzwkkajfptKixWJ6TKm0saUqolKhnkRdSwpGbD4tykoJE7SZe1BfPn1XXnmxpLy9/qSI1RrRe1LpFS3+84K0Cp44hl309EoeXb9C8NhYfE5877VjyFBK1m3hRTTzrM1Jjvq8pIxU1JwDkKi0LnIV+WpjvpWiaNx6Pz50tbfpPQqJ2Ey/eo4cPqh8ysKX97u3rKlJjRKtFRRr/3aQntZhzktVBDp+naV5E9D9y8GLWveCkkKjdxIt6+9bN8OTxXLh3907VZp9gnz72mWPzWy1qrgrRnpmZOSYwbf/rIR85Sbyow+Zl3/r9W1wT1R9nkRJSonYTL6qJZ31Gasz3NWWkoubICTwso8orBHjx3r55VfWxpc2aI1JjRJGiUm2oOmfNqPIKAV7UQaNIUYUokfX1taSEpwmOHQaJKsQA9Hq9sPHzZyWe/y1vKpjD3P294f+ZvUQVogAkqhAFIFGFKACJKkQBSFQhCkCiClEASVF120Uh2kP2tou6kbEQ7SF7I2NuQ87tyFVVhThfcBAXcdLoiwqbW9vVBGyWsEKMF5zDPRzERc8RUQGLKbm8P+ZiVqFQjCdwDvd8Jf1LCH8AhNqH6bJNRbsAAAAASUVORK5CYII=" InformativeScreenshot="75906a820d7985eac1f8cd64b489fc4e.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/Cbh368o3WEKxZW-0AZ861w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, Image" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="508, 701, 41, 27" ElementType="Text" FriendlyName="'Date'" FullSelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Date' parentid='J4T73sQ_92p-dialog-body' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Date' parentid='J4T73sQ_92p-dialog-body' tag='LABEL' type='' check:text='Date' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAfCAYAAABzqEQ8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE2SURBVFhH7ZTLjcIwEEC3MEQVUMIuNAB3aAJ6wEe4QglpISXklqNXDzJoMnxsA7KI5CdZiT22/GYyyo8fIEU6F0U6F0U6F0U6F0U6F0U6F8OX3m43fjwe9cZ0OvF1XXc7voMb6cNh380uVFV1lrfrz+DMer3ybdt2K58lKA1Uejb7ja74V0iDjelW0i2k1xnMBR2bz/980zRdJI1oadZFgMucc+d3IKYre6/SnNUJ2DMpJEk/uoQqL5eLa+WstI0D76zFtpzmpUoDl9EW9z63lWYu++wglkqUNJcjITGeuo9DlWb+Tg9boqT1pZKArlBImnjK3ydEUNpWFdgnrSJJ2PawlWW/ToSnc7vrPIUbadtzIqdBBiniJHQ6HXuVlkT0eb0mQ3+tFHrSQ6FI56JI52KA0t7/A7A+9Ta9uUQeAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      <uix:Target DesignTimeRectangle="508, 701, 41, 27" ElementType="Text" FriendlyName="'Date'" FullSelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Date' parentid='J4T73sQ_92p-dialog-body' tag='LABEL' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAfCAYAAABzqEQ8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE2SURBVFhH7ZTLjcIwEEC3MEQVUMIuNAB3aAJ6wEe4QglpISXklqNXDzJoMnxsA7KI5CdZiT22/GYyyo8fIEU6F0U6F0U6F0U6F0U6F0U6F8OX3m43fjwe9cZ0OvF1XXc7voMb6cNh380uVFV1lrfrz+DMer3ybdt2K58lKA1Uejb7ja74V0iDjelW0i2k1xnMBR2bz/980zRdJI1oadZFgMucc+d3IKYre6/SnNUJ2DMpJEk/uoQqL5eLa+WstI0D76zFtpzmpUoDl9EW9z63lWYu++wglkqUNJcjITGeuo9DlWb+Tg9boqT1pZKArlBImnjK3ydEUNpWFdgnrSJJ2PawlWW/ToSnc7vrPIUbadtzIqdBBiniJHQ6HXuVlkT0eb0mQ3+tFHrSQ6FI56JI52KA0t7/A7A+9Ta9uUQeAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image">
+                        <uix:Target.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_9">&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Date' parentid='J4T73sQ_92p-dialog-body' tag='LABEL' type='' check:text='Date' /&gt;</Literal>
+                          </InArgument>
+                        </uix:Target.FuzzySelectorArgument>
+                      </uix:Target>
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
@@ -700,8 +728,23 @@
                   </uix:VerifyExecutionTypeIntoOptions.Retry>
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None">
+              <uix:NClick.DelayAfter>
+                <InArgument x:TypeArguments="x:Double">
+                  <Literal x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="Literal`1_1" Value="2" />
+                </InArgument>
+              </uix:NClick.DelayAfter>
+              <uix:NClick.MouseButton>
+                <InArgument x:TypeArguments="uix:NMouseButton">
+                  <Literal x:TypeArguments="uix:NMouseButton" sap2010:WorkflowViewState.IdRef="Literal`1_10" />
+                </InArgument>
+              </uix:NClick.MouseButton>
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="iXbZdpqAOUqFo7WiCNRD_w" DesignTimeRectangle="672, 800, 71, 35" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aaname='Apply' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl aaname='Apply' parentid='J4T73sQ_92p-dialog-body' tag='BUTTON' type='button' check:text='Apply' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAnCAYAAABHeLXLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJESURBVGhD7ZrNSsNQEIV14yP4Kj6A7+FLKOK6r+BKcK3uddmtGzcKKi78QVCoIkrxB1qpXjnRE6e3k/am90YwmQOH/Mzc5M6XSWhJZpwpWAarhAxWCRmsEhqBtXXYdQvrF25u7cTNrh43zqgb9YODryFYy3sdN986Uw/SNIMDeEjlsEDSQA0bPGSH5bDQetqAphtcqBxWU59RkwwuVA5LSzR/mzJYAaYMVoApgxVgymAFmDJYAaYMVoCpymC1z19cf/DpWu17NR7rpZ0b99z7cJsHT2o8palKYC1uXLnLx35WDKBpObGuDSx0E2BtH3Xdbfc9g6flxbg2sNBNsFYQwAEg4qd3vZ+zu2y9TI48Ni4O1v1bHvkpOptKDgtFPLwO8oljwhoIiBC5j3khORKWhIsY43IeMaaSw8LkMXEUwG0Uhclj2y9ajmNeSI6EhRhA+eeV2zGmksNCgf4VlkURhH97oAPQCRLWuBz/uIhhG0uOZyzWVFJYLECTf4ulhgXjHNiWeXL8tKaSwsJEUSSKlfu1q+6DkGNDcjRYWGdn+7dwjKlksIoK9GNclz9Y/cJDcjRY2IeO8vfHmkoGS3aPFgcoAFjZ7WTL/eu3bElJyIQ1LkeDBaOjMAbHkPtjTCV/wE+y7DItDofkFJm3oRab1lStYKHLqvg/StUCFuAAUlV/3Kk/h/UfTRmsAFMGK8BUDstesupWX7La63vd6ut7+zBk1IUfhkD2ydGvwaHwkyMKJNF6TX2GoW7ULzuKGoFlKpJzX7ax0g1of6ChAAAAAElFTkSuQmCC" Reference="4I5ZSPUYzEGseBRjI0-ynQ/5uWoWB9UkkuY1Agr43faMQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, Image" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
@@ -715,20 +758,26 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick DisplayName="Click 'Run'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick DisplayName="Click 'Run'" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.ClickType>
                 <InArgument x:TypeArguments="uix:NClickType">
                   <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_38" />
                 </InArgument>
               </uix:NClick.ClickType>
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="rPQZOvCMIEGnFdwXPHmY6g" DesignTimeRectangle="1826, 230, 68, 40" ElementType="Button" FriendlyName="'Run'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='Run' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl parentid='QRvyUeeWza' tag='BUTTON' type='button' aaname='Run' check:text='Run' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAsCAYAAADGiP4LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGmSURBVGhD7ZoxbsJAEEWTJkfIVXKwoCh1rpCWOhcgLSegSJGINO4tUUAKhCiQBo/xX6/tHUwks3G0/0m/8HqxmafxVHsj5CwU1AMF9dAR9PbxIw+vmdw9f8nt02cS0Vq1Zq29TUPQ43su9y/fwYekEK1dHfg4QWovZTmIOvA7yQnSFgv9IMWoC+AEpTRz+qIugBMU2phyAAUZARRkBFCQEUBBRgAFGQEUZARQkBFAQUbAlQXlMt9VL/BYLkJ7xxUQRVBDyGwrm+J9Y5cE4gsqMl2JbLK8sTa2gL8XVHbUQeYzf89alt7aJDuI7LYyWeyrf1ug127/8AHxBZVF7mWK60sFKau1d/+6XQjiD2lXZJWLBXlSsdZ+1oABcTuo7J6WjN98Yu5+eG3IgOifWKcwCmoP6dP8qNeaMsq0pCUmqCrOzZRqTrl5Ul2nLAhd5KSUHQNUTDKf2P8NoCAjgIKMAAoyAijICKAgI4CCjAAKMgIoyAigICPACeLxlzrB4y88QFUneICKR/BOMY/gKTzEeeYQJ1B72mIpzSStVWv2Owd0BBEfkSO1dxG5H0ObywAAAABJRU5ErkJggg==" InformativeScreenshot="51d10ebb44f2741886ca17772831b5ad.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/4Ok-FppzlE-0nFw1f3exNQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" WaitForReadyArgument="Complete" />
+                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4" ContentHash="rPQZOvCMIEGnFdwXPHmY6g" DesignTimeRectangle="1826, 230, 68, 40" ElementType="Button" FriendlyName="'Run'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='Run' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627643777657-333938' tag='IFRAME' /&gt;&lt;webctrl parentid='QRvyUeeWza' tag='BUTTON' type='button' aaname='Run' check:text='Run' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAsCAYAAADGiP4LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGmSURBVGhD7ZoxbsJAEEWTJkfIVXKwoCh1rpCWOhcgLSegSJGINO4tUUAKhCiQBo/xX6/tHUwks3G0/0m/8HqxmafxVHsj5CwU1AMF9dAR9PbxIw+vmdw9f8nt02cS0Vq1Zq29TUPQ43su9y/fwYekEK1dHfg4QWovZTmIOvA7yQnSFgv9IMWoC+AEpTRz+qIugBMU2phyAAUZARRkBFCQEUBBRgAFGQEUZARQkBFAQUbAlQXlMt9VL/BYLkJ7xxUQRVBDyGwrm+J9Y5cE4gsqMl2JbLK8sTa2gL8XVHbUQeYzf89alt7aJDuI7LYyWeyrf1ug127/8AHxBZVF7mWK60sFKau1d/+6XQjiD2lXZJWLBXlSsdZ+1oABcTuo7J6WjN98Yu5+eG3IgOifWKcwCmoP6dP8qNeaMsq0pCUmqCrOzZRqTrl5Ul2nLAhd5KSUHQNUTDKf2P8NoCAjgIKMAAoyAijICKAgI4CCjAAKMgIoyAigICPACeLxlzrB4y88QFUneICKR/BOMY/gKTzEeeYQJ1B72mIpzSStVWv2Owd0BBEfkSO1dxG5H0ObywAAAABJRU5ErkJggg==" InformativeScreenshot="51d10ebb44f2741886ca17772831b5ad.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/4Ok-FppzlE-0nFw1f3exNQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Report Builder | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                  <uix:TargetAnchorable.WaitForReadyArgument>
+                    <InArgument x:TypeArguments="uix:NWaitForReady">
+                      <Literal x:TypeArguments="uix:NWaitForReady" sap2010:WorkflowViewState.IdRef="Literal`1_11" Value="Complete" />
+                    </InArgument>
+                  </uix:TargetAnchorable.WaitForReadyArgument>
+                </uix:TargetAnchorable>
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Retry="True" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]" />
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message updated date range" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
+            <ui:LogMessage DisplayName="Log Message updated date range" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <mva:VisualBasicValue x:TypeArguments="x:Object" ExpressionText="&quot;Updated start date as  &quot;+ strStartDate +&quot; and end date as - &quot;+ strEndDate" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_8" />
@@ -737,7 +786,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
@@ -760,12 +809,12 @@
       </uix:NApplicationCard.Timeout>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message Report is generating" sap:VirtualizedContainerService.HintSize="761.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+    <ui:LogMessage DisplayName="Log Message Report is generating" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_7">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <Literal x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="Literal`1_20" Value="Info" />
@@ -779,27 +828,38 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'NoResultFound'" sap:VirtualizedContainerService.HintSize="761.6,517.6" sap2010:WorkflowViewState.IdRef="NCheckState_3" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]">
+    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Total Records'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_6" Timeout="20">
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="vu-00BuDU0Oikq5dxmt2wQ" DesignTimeRectangle="54, 307, 88, 42" ElementType="Text" FriendlyName="'Total Records'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='Total Records' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='Total Records' tag='DIV' type='' check:text='Total Records' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAuCAYAAAClBX6SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJWSURBVHhe7ZVLbsIwFEXZb4XUPYDEIiJlGyA2gTJt1TGM6QJc/2L7vThgfleoukfyIHmxfX3sJIvf89mw4RqFgxuFg9vi5/vLsOHawhAoFA6GwsFQOBgKB0PhYCgcDIWDoXAwFA6GwsFQOBgKB0PhYCgcDIWDoXAwFA6GwsFQOBgKB5OEH/pP87Gst9X2FJ96JiezW18aO9R1lm6I5TfCuWt1VD3htwyQGUy33Jhdc7c24ULwaW9Wbyj9/wq33JfttbxIuBNavt69OcSKGfriflnTn4Wiz7OEq7n188ftZrauazJLWG83jOvO2V2G1K8fJpnkuPIQtgmvvMph0FJg5YTbfl0xjg9qAwbuEO7l6o0urn3OnGGS0dZ3cTyfZb03x3BpCWJznqlox6Rf3PDUb5LRzlkssUm4FDWihVSEa1yYFLZNeD4pOkNlQyw5+4U8amMSIp/eAMtMP+FLjDGlQfi8GPnczALjCUjtRuFJqB+nHH88gZXmNsY/L09nYq7mhY73w/gX37DI1EPIoQ+Do1l4rfM14a4uXy8b+F7hFv+JUCewlssj5lLM1VqEV/pJDxE/llq/5YWflOkGPCpcSrjSf+6z4ZiriXwV4dV+l3Nol4/9NMVu64A6SKg/Jlz9CJ0gJeC47dO1PyhlRruOaz/NPF9FeMxUHr6QJ6+jnL+2xjbhjig9fSdF2MA4eRIi+th7D59wR9y4uOg8Z2zqTfRiU11ujqzpuWrCHVF67OPyC1/+EMh6SVU4eR0UDobCwVA4GAoHQ+FgKBwMhYOhcDAUDsWYP9Q935oAN2BdAAAAAElFTkSuQmCC" InformativeScreenshot="f3d6c2802f3aee44129644ba1f045e3a.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/ErgSuhcSK0aMjQxM71trWQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="FuzzySelector, Image" />
+      </uix:NCheckState.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NCheckState>
+    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'No Results'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_3" Timeout="5">
       <uix:NCheckState.IfExists>
-        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="375.2,249.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="249.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message - No results screen" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;No results screen found&quot;]">
+          <ui:LogMessage DisplayName="Log Message - No results screen" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;No results screen found&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Throw DisplayName="Throw :BRE" Exception="[new BusinessRuleException(in_Config(&quot;ErrorMessage_ReportGenerationFailure&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+          <Throw DisplayName="Throw :BRE" Exception="[new BusinessRuleException(in_Config(&quot;ErrorMessage_ReportGenerationFailure&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
         </Sequence>
       </uix:NCheckState.IfExists>
       <uix:NCheckState.IfNotExists>
@@ -812,54 +872,66 @@
         </ui:LogMessage>
       </uix:NCheckState.IfNotExists>
       <uix:NCheckState.Target>
-        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="IbEvg_uwZUSuxDG4ge_SCw" DesignTimeRectangle="677, 698, 585, 45" ElementType="Text" FriendlyName="'NoResultFound'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aaname='No Results' tag='DIV' innertext='No Results' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aaname='No Results' tag='DIV' innertext='No Results' type='' check:text='No Results' /&gt;" ImageBase64="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" InformativeScreenshot="6ce535cfeac9b6b1d74e6a3ddc995393.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/3FHgwNmC5UeUr4403eF1yA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" SearchSteps="FuzzySelector, Image" />
+        <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="I3H4DFniQ06ydVs77j-m8w" DesignTimeRectangle="668, 671, 585, 45" ElementType="Text" FriendlyName="'No Results'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='*No Results*' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='*No Results*' tag='DIV' check:text='No Results' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAk0AAAAxCAYAAADHhZ3LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIkSURBVHhe7dixThRRGIZhu+UqsNQrgArt1DvYxBuAxkhHSSwIWmnDBVgYKLcw4QpMlko77WgotiDZwsLyF8PgAhrna4h7Js+T/MWe2ZPMZIp5c+4VAAC9RBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBMAQEA0AQAERBPAXTo7rPFoVCujcR2ddWtAk0QTwF0STTAYogmaMKuj578+vJez/mpaP7orvU72u33/96M9Oxr/vv+/zcONp7W1d1jTWbdhKEQTDIZogibcjKaV0XrtfgqzqZFoWsyDGh98zqNw2YkmGAzRBE24HU0Xs7Ff0+/d5X9ZumjareP5vObXZvZtWpODzXq2evV8q7X9cd7tbFxfNJ1/rcn7ndp6slkTUQVLTTRBExbRdP/Fy9ru4uLxm+BEZumi6SL2urU/nB/Xztrls62sva0v3XLT+qJpSd4P0E80QROunTTtTev0w1WAPKp3fWXRUjRdWPxvIBEhmmAwRBM04WY0VZ0ufm/0nMg0Fk2L+x3V65NurWWiCQai6idASRrwC3IZsQAAAABJRU5ErkJggg==" InformativeScreenshot="0433dad3819984fe4b05c05b3fda8539.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/b0sdjekVsEeWJ6OwDB7nQw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
       </uix:NCheckState.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NCheckState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Application/Browser 'Chrome: Resource Timecard | Salesforce'" sap:VirtualizedContainerService.HintSize="761.6,589.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Application/Browser 'Chrome: Resource Timecard | Salesforce'" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Export Report" sap:VirtualizedContainerService.HintSize="241.6,332.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Export Report" sap:VirtualizedContainerService.HintSize="375.2,484" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click 'More Actions'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick ClickType="Single" DisplayName="Click 'More Actions'" sap:VirtualizedContainerService.HintSize="333.6,204" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="LG_xmx6WQ0OxWk6ba41tdA" DesignTimeRectangle="1839, 223, 40, 40" ElementType="Button" FriendlyName="'More Actions'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl tag='BUTTON' aaname='More Actions' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627645516593-594249' tag='IFRAME' /&gt;&lt;webctrl parentid='JK6zCj3rfI' tag='BUTTON' type='button' aaname='More Actions' check:text='More Actions' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEjSURBVFhH7ZnBCoJAFEX73yBaBPUFQX1G1CpqF/UH1bKWianlysDAwJ28ukOLyClQ58EMvAMXZRzxMAyz8LYeWUYuRYS50/K9EyFREKirDQnPPsWXiG5JUhamN5hoE/c0pWsUqjghDIqiUMKfK221MFAr/doezgiD4LWnnRKGmwhzIsLciDA3IsyNCHNjTDiOr7RZryoF71TFmPDxeKBup10pXo3vGBMG+91WK6YL5tbBqDCYTSdawc8sF/P37OoYFwb/pPGsCSzCeZ7TeDQsyWKsKSzC4Fsa9xhrCpswwLE16PdU6hxhOliFAURNyQJ2YdOIMDcizI0IcyPC3IgwN6gQnBHGD230HU4IO1UZ/CxlIIrYVHuhIkCvoa29vgfsTkZPb4BXaaO44F8AAAAASUVORK5CYII=" InformativeScreenshot="0f7dcf30e7aa02e8514877b8aada8a71.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/yu5REnFjnU6hs9zsFNbCWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" WaitForReadyArgument="Complete">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1772, 223, 68, 40" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl name='builder-1627645516593-594249' tag='IFRAME' /&gt;&lt;webctrl parentid='kLkJgwuiTR' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627645516593-594249' tag='IFRAME' /&gt;&lt;webctrl parentid='kLkJgwuiTR' tag='BUTTON' type='button' aaname='Edit' check:text='Edit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAsCAYAAADGiP4LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGdSURBVGhD7ZpBSsNQEIb1EB7CM3gET+IF3Lt25cKtXkBcewB3bkRBsBKTtChSJWIiiEgY+6eZNE1fHBdNqL7/g4HX9x6B+Zh5dDFrWZoKoz0oyAgKMmJB0PN4LKNhLOF9IMHdwMuIw7BazwkaxVERr0kiPgMxSiWoqJyJnDzPyyN/cQpCW/leOYpTUDR5c8gUp6D6pu9QkAEFGVCQAQUZUJABBRlQkAEFGVCQQa+CLh8/ZGPvRtZ3r+fi7DYrbyyCs+2jSN4/c3nKvmRzfyA7pw/laff0LmjrMCgS/S11QS4Ozl86FUZBBisnCEK09dBOxxdJJQiBNaTout6q2F82KyUIcvBG4R7QN8clSPl3FdR8pCEAIlzJg3qLeSGorYK0WiCkDgWVYA9n2l4KBZW4kgf4TUElSFbfJID7eLMsQXreBb0Lcv2Tbias+0j85OrtR0GQCanN7yyLXgX9RSjIgIIMKMiAggwoyICCDCjIgIIMnIIwckemOAVxgGqGUxBH8GY4BRVVxCHOglZBCB0DxkgeLvoYrWPAjGak8g1sED2TOAq0SAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
+                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="2EoOMSqd20-_cqvdHiIOsg" DesignTimeRectangle="1839, 223, 40, 40" ElementType="Button" FriendlyName="'More Actions'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='BUTTON' aaname='More Actions' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1629444183829-689877' tag='IFRAME' /&gt;&lt;webctrl parentid='GwzYGDl85c' tag='BUTTON' type='button' aaname='More Actions' check:text='More Actions' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEjSURBVFhH7ZnBCoJAFEX73yBaBPUFQX1G1CpqF/UH1bKWianlysDAwJ28ukOLyClQ58EMvAMXZRzxMAyz8LYeWUYuRYS50/K9EyFREKirDQnPPsWXiG5JUhamN5hoE/c0pWsUqjghDIqiUMKfK221MFAr/doezgiD4LWnnRKGmwhzIsLciDA3IsyNCHNjTDiOr7RZryoF71TFmPDxeKBup10pXo3vGBMG+91WK6YL5tbBqDCYTSdawc8sF/P37OoYFwb/pPGsCSzCeZ7TeDQsyWKsKSzC4Fsa9xhrCpswwLE16PdU6hxhOliFAURNyQJ2YdOIMDcizI0IcyPC3IgwN6gQnBHGD230HU4IO1UZ/CxlIIrYVHuhIkCvoa29vgfsTkZPb4BXaaO44F8AAAAASUVORK5CYII=" InformativeScreenshot="d7af05dfa546bf6f291b9ae5652265a6.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/DXsnbew8qEuoRy8hjMlT1A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Retry="True" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)*2]" />
               </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="Sn6C6EgjtEeUZXc2q4-aeg" DesignTimeRectangle="1723, 467, 183, 42" ElementType="Text" FriendlyName="'Export'" FullSelectorArgument="&lt;webctrl tag='IFRAME' class='*ReportBuilder' /&gt;&lt;webctrl aria-role='menuitem' tag='A' aaname='Export' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1627645516593-594249' tag='IFRAME' /&gt;&lt;webctrl aria-role='menuitem' parentid='JK6zCj3rfI-item-4' tag='A' type='' aaname='Export' check:text='Export' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALsAAAAuCAYAAABwO2iaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH4SURBVHhe7dcxTsJgGMZxN7wQXgI8AifAI+Cop2DGnZmEjQu4iMbEdCdsrDUP8JKXBgxRqKTP/5c02PYrdPh/9evNcrksPz/eS6Cp1HdRFCWxo/GIHTaIHTaIHTaIHTaIHTaIHTaIHTaIHTaIHTaIHTaIHTaIHTZ2sb++fRE7Go3YYWMXO8sYNB2xwwaxw8ZZY1+tVuVDv1/etlp72/PT03YE8H8uEvtsNtseuQ66H92X7g++iB02aot9Pp+Xd+323jktbyLCl9Fo/fdkMtktf+673XKxWGxHb2hcXiJpP2isrhmPx+tPbY+Dwd54llS+an2yR9Aap/h7vd4u5og4x6hjOfg8OSTijuBjP18jPNkhF4k9P0m1Rfx5Mijc/FSuhi0Rr8ZrcnQ7nfVnlkOuxh+IHVLrk110ThOgGp8CrR7L36etOhkk/4fIkyPTPrGj9thj7f6b2A8FS+w4Va2xx3m9hFbHHYpd8SpkBa3t1GUMseOQWmPPQWtMXpbonJY3+gxa1+cX1mMvqPF7P8WefwueLhJ7fjmN9fl0Ol0vX/KTOccbE2E4HO5dF2EHXZO/O4d9LPZ8X3nywMtZY/+LQ8sY4JyIHTaIHTauJnbg0ogdNogdNogdNogdNogdNogdNogdNogdNogdNogdNogdNogdNjaxF+U3ZBh5lRRbE7MAAAAASUVORK5CYII=" InformativeScreenshot="2410fd7d46ed5e18e71546af34ab7917.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/LSD8chF4QE2IMf2uEwO4FQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image" WaitForReadyArgument="Complete">
+                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/reports/lightningReportApp.app?reportId=00O5b000005AUXKEA4&amp;isView=true&amp;filterValues=%7B%7D" ContentHash="sH9HlaUmhUGRICvA7S-KnA" DesignTimeRectangle="1738, 477, 42, 22" ElementType="Text" FriendlyName="'Export'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aria-role='menuitem' tag='A' aaname='Export' /&gt;" FuzzySelectorArgument="&lt;webctrl name='builder-1629444183829-689877' tag='IFRAME' /&gt;&lt;webctrl parentid='GwzYGDl85c-item-4' tag='SPAN' type='' aaname='Export' check:text='Export' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAaCAYAAADIUm6MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFOSURBVFhH7ZNNboMwEEa7Sy+UXiLkCJwgPUK6TE7Bmu5ZI7HjDhyCLVtXjzDowyEtalrnR36SBdhj+40Zv7gHJYqHJoqHJoqHJoqHZhTvus6973budbWatOPhMETcF2fidV0PPfcBPnjhpzy3eNM07m29noxRQrbgZ57372VZjiW2TRLXtu0QfYI4LUO+DWKZUxRF/6R97PeTeC3bxSducsSRSJqmo5gJ6cL0qbwmCiZq8vatc2DxiWuGNEtEE0NCT8uXBBMhnkSTzaZ/KirlJ2IsFjfRORgjGX8hNvP7dD2anxjon9NEFb6vFrda/4343OZBxG2cC+jHzYkjghRytKWl8ufiKkeM/nrGKCGeBvdAL+uly2n7fSeuexk/Xk76qqrqS0RPTEUsqSzLJvNM0mCOrq2Sl8TVSw9iFL+GuVL5b6L4Q4rfgigeFue+AGCObcq0PwOPAAAAAElFTkSuQmCC" InformativeScreenshot="90e3ae10709644782570a0ef633dd0e5.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/HGGVjg-mX0Ca_YbSG2Movg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset X="6" Y="-1" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Retry="True" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]" />
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Export Popup'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/r/Report/00O5b000005AUXKEA4/view?queryScope=userFolders" ContentHash="FQhxjlRva0yMjlIDYFBjxg" DesignTimeRectangle="1264, 807, 85, 40" ElementType="Button" FriendlyName="'Export Popup'" FullSelectorArgument="&lt;webctrl aaname='Export' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Export' tag='BUTTON' type='button' check:text='Export' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAsCAYAAAAO5BTdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI7SURBVGhD7ZuxThwxEIZDmedCvAaPQZEO3oEiEn2o04aagooIkYIVSSRACSAhtFAQBBi+Q4MGnw2Xu92Bg3+kT16vxz75s+W7wvfhrG2T6BdJDkCSAxiSfHx0lJrdX6nZ2Um7jRgVfOENf7nTR5L/HByk9e9NmlveTh8/baWZBTEq+MIb/vDovT5IZgVIkNzJwB8e/Y5+kMxWZyVKHcX/gUd8Dku+O1O0i7sBj/gckszhXeogxgOfktwzkhyAJAcgyQFIcgCSHIAkByDJAYRKXtk4SXn8u7pJS2uHxfy3Qrjk/dPLNPv5Z7H9pVhrztL234tiWxdI8h3vRjITbS+u0/zq3qBOSZ339vxl83TQ34K2fBxk+eAzrY1nxvn6ox20/T65fDQeURpzUl6NZN7RZpOktN1lkv357RfB9/c7klz6mGhKIt+1/rP6IFxyHl46Uo7Pr9Lit/uyJtSgbv1tl5Kb55hAckpftG9Ocm0nG0yW8EJNMv19rh/PC6/l8PzcQvTBq5PMhMeVXBIlyRl2XJBHaTJqkr2cUQS+e8m8o40JU2fSNnGT7AWxINTtfLX+Xlae85TkpxZ/UsIll4L3yPETNbEIsGd+elFa0M+Pb6It8i+5mmQbn7BF7pJQyeNiEnKp04IkByDJAUyF5GlHkgOQ5AAkOQBJDkCSAyhK1q3O7qje6tT95O6o3k/WTftuwF/1pj3oPyPjgy+84a/6nxGDFWCrc6ZweIvRwBfe/A42hiSL7pHk3mnTLVPUDDWGYr+HAAAAAElFTkSuQmCC" InformativeScreenshot="169fa3651ee0a40b5c5cea39e921aaee.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/1nVu4bacyUeAf3d8DZQkHA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" SearchSteps="FuzzySelector, Image">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1848, 250, 40, 40" ElementType="Button" FriendlyName="'More Actions'" FullSelectorArgument="&lt;webctrl name='builder-1627645516593-594249' tag='IFRAME' /&gt;&lt;webctrl parentid='JK6zCj3rfI' tag='BUTTON' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH3SURBVFhH7ZnJSsNQFIbzUj6AryG49iHc+AIuVZwQQZAuHMCVC0FqHWtb1NrRVKvWjhnFYVN+7x9dOJRiba7mYj44EJIb7sfh5ATO1SzbRdN0UGs5uG3YuK7buKr9TZTF3tyfHtWWjYbwMiwHtuPCdV3ci9AahuMtzNyYSFwa2L9oIVb4u9grthAvGTgtmyhULNwIeYozsZTWKJu6MrCZbmI5XsP8XhVTO3eYiP5+cN/Z3SoWD2pYSdaxlWkiKZKoVy3URWIprUVTeUR2cjjLlaAXC4GIXP4Ch2kdK0fXWEvVcai/SjPTWrbxjPVzx1sYJCzTRLZ4iYMz3ZNmplke2sndE5aSVuCESbvd9qSZaZZHXtS0lqw8YSFuBlKYMNNeeYia5oeoJW4fMXcUXGHCmuaHyO6hhDDd2D3Y8pQRZstjn1ZGeFL0aaWE+WMJhWURCssmFJbN/xXOl5uYWY33FHynV3wT3j4uYWB4sqc4zlTe3v4+vgmTjWi2o1in4Nqf4KswGZve6ij4PsaXYm+re8d3YdJNms/6QYqw+/CModHIF1ne6xcpwuSzNK95r1+kCRO2rcGROS9+0sI6IVWYUNQvWSJd2G9CYdmEwrIJhWWjpLBygxTlRlVKDQM/jFuVG2grd2Sg3KGMcsdeQTtYnIl1O1h08QKM3sbmjSY21AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image">
-                        <uix:Target.FuzzySelectorArgument>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_39">&lt;webctrl name='builder-1627645516593-594249' tag='IFRAME' /&gt;&lt;webctrl parentid='JK6zCj3rfI' tag='BUTTON' type='button' aaname='More Actions' check:text='More Actions' /&gt;</Literal>
-                          </InArgument>
-                        </uix:Target.FuzzySelectorArgument>
-                      </uix:Target>
+                      <uix:Target DesignTimeRectangle="1285, 808, 42, 37" ElementType="Text" FriendlyName="'Export Popup'" FullSelectorArgument="&lt;webctrl aaname='Export' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Export' tag='SPAN' type='' check:text='Export' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAApCAYAAABKvBuPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF7SURBVFhH7ZlLSgNBEIbj2byHx3CvtxDc69qtOYGrgOgiQRF0oQghTFzEEG35Rn6objPOGJhOWqrgp1/1+LpIzyaDeVWFElUu+N1kHErUYO/wOpQoB88tB88tB88tB88tB88tB8+tCPz0ahpSe199huPhSxS0C/oB/jRbhv2T+8hp2xpO5uHmeRHt/X9wgqvFRzg4f6zXjKzZ1/xsNKvjZZyleQCwRk2dMSfPxW1Vnz1Ml1E+TDk7g7PHmQIZ1QWB2/dgL2bjbefwJUbwjFjaXVtLan2c9iIUen1bhaPL77EJUmKteHUT39RHUPis+xh0Am/quEQCzEIKnHjra/PZSzT5MG+7nPRncJJsCp4WT316A9dPBT9GFWgCtwW7QPUCzh5nJGFNIiUTuC3KJVnr96p4C5D6/AaecrU+Tox9CtpgwZJUcz5jjDLibH7By9KH2ASu/JgaF4FvKiVOQfuUgxcJvg05eG45eG45eG45eG6VC77uH63d1zh8AQ9G/J2RX2WCAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
@@ -867,31 +939,18 @@
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Retry="True" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]" />
               </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Export (1)'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://uipath.lightning.force.com/lightning/r/Report/00O5b000005AUXKEA4/view?queryScope=userFolders" ContentHash="fqMfKDlFJ0a7O2aKWAy8oQ" DesignTimeRectangle="1264, 807, 85, 40" ElementType="Button" FriendlyName="'Export'" FullSelectorArgument="&lt;webctrl aaname='Export' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Export' tag='BUTTON' type='button' check:text='Export' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAsCAYAAAAO5BTdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI7SURBVGhD7ZuxThwxEIZDmedCvAaPQZEO3oEiEn2o04aagooIkYIVSSRACSAhtFAQBBi+Q4MGnw2Xu92Bg3+kT16vxz75s+W7wvfhrG2T6BdJDkCSAxiSfHx0lJrdX6nZ2Um7jRgVfOENf7nTR5L/HByk9e9NmlveTh8/baWZBTEq+MIb/vDovT5IZgVIkNzJwB8e/Y5+kMxWZyVKHcX/gUd8Dku+O1O0i7sBj/gckszhXeogxgOfktwzkhyAJAcgyQFIcgCSHIAkByDJAYRKXtk4SXn8u7pJS2uHxfy3Qrjk/dPLNPv5Z7H9pVhrztL234tiWxdI8h3vRjITbS+u0/zq3qBOSZ339vxl83TQ34K2fBxk+eAzrY1nxvn6ox20/T65fDQeURpzUl6NZN7RZpOktN1lkv357RfB9/c7klz6mGhKIt+1/rP6IFxyHl46Uo7Pr9Lit/uyJtSgbv1tl5Kb55hAckpftG9Ocm0nG0yW8EJNMv19rh/PC6/l8PzcQvTBq5PMhMeVXBIlyRl2XJBHaTJqkr2cUQS+e8m8o40JU2fSNnGT7AWxINTtfLX+Xlae85TkpxZ/UsIll4L3yPETNbEIsGd+elFa0M+Pb6It8i+5mmQbn7BF7pJQyeNiEnKp04IkByDJAUyF5GlHkgOQ5AAkOQBJDkCSAyhK1q3O7qje6tT95O6o3k/WTftuwF/1pj3oPyPjgy+84a/6nxGDFWCrc6ZweIvRwBfe/A42hiSL7pHk3mnTLVPUDDWGYr+HAAAAAElFTkSuQmCC" InformativeScreenshot="64c55cefc2364da4c44a443bb18bf9bc.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/td_CYD_QokyaYonbLtFVhQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" SearchSteps="FuzzySelector, Image">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1285, 808, 42, 37" ElementType="Text" FriendlyName="'Export'" FullSelectorArgument="&lt;webctrl aaname='Export' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Export' tag='SPAN' type='' check:text='Export' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAApCAYAAABKvBuPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF7SURBVFhH7ZlLSgNBEIbj2byHx3CvtxDc69qtOYGrgOgiQRF0oQghTFzEEG35Rn6objPOGJhOWqrgp1/1+LpIzyaDeVWFElUu+N1kHErUYO/wOpQoB88tB88tB88tB88tB88tB8+tCPz0ahpSe199huPhSxS0C/oB/jRbhv2T+8hp2xpO5uHmeRHt/X9wgqvFRzg4f6zXjKzZ1/xsNKvjZZyleQCwRk2dMSfPxW1Vnz1Ml1E+TDk7g7PHmQIZ1QWB2/dgL2bjbefwJUbwjFjaXVtLan2c9iIUen1bhaPL77EJUmKteHUT39RHUPis+xh0Am/quEQCzEIKnHjra/PZSzT5MG+7nPRncJJsCp4WT316A9dPBT9GFWgCtwW7QPUCzh5nJGFNIiUTuC3KJVnr96p4C5D6/AaecrU+Tox9CtpgwZJUcz5jjDLibH7By9KH2ASu/JgaF4FvKiVOQfuUgxcJvg05eG45eG45eG45eG6VC77uH63d1zh8AQ9G/J2RX2WCAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                  <uix:TargetAnchorable.WaitForReadyArgument>
-                    <InArgument x:TypeArguments="uix:NWaitForReady">
-                      <Literal x:TypeArguments="uix:NWaitForReady" sap2010:WorkflowViewState.IdRef="Literal`1_40" Value="Complete" />
-                    </InArgument>
-                  </uix:TargetAnchorable.WaitForReadyArgument>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears" Retry="True" Timeout="[CInt(in_Config(&quot;WaitTimeDuration&quot;).ToString)]" />
-              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="s8uh2uqnT0aqo00xp4JYuw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="9420eb89a20418b09a375d899a811c27.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/ZF_LsAlciE24oisu8Sb_KA" Selector="&lt;html app='chrome.exe' title='Resource Timecard | Salesforce' /&gt;" />
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="KB9Nuwv1Mk63y7l2xwv1sA" IconBase64="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" InformativeScreenshot="b81d19828d4ae898620998ce637c5207.png" Reference="4I5ZSPUYzEGseBRjI0-ynQ/ZF_LsAlciE24oisu8Sb_KA" Selector="&lt;html app='chrome.exe' title='TimeCard report _Monthly | Salesforce' /&gt;" />
       </uix:NApplicationCard.TargetApp>
       <uix:NApplicationCard.Timeout>
         <InArgument x:TypeArguments="x:Double">
@@ -900,19 +959,19 @@
       </uix:NApplicationCard.Timeout>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message - extracted report" sap:VirtualizedContainerService.HintSize="761.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;exported the report in .xlsx format&quot;]">
+    <ui:LogMessage DisplayName="Log Message - extracted report" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;exported the report in .xlsx format&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="761.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Download sales force report execution ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="552,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Download sales force report execution ended&quot;]" />
   </Sequence>
 </Activity>
